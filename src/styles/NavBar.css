@@ -5,4 +5,14 @@
 img {
   width: 20%;
   height: 10%;
+  align-self: center;
+}
+.navbar-links {
+  margin: 0px;
+  padding: 0%;
+}
+.navbar-links-items {
+  display: inline-block;
+  margin: 0px;
+  padding: 5%;
 }

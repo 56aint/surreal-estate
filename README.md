@@ -131,7 +131,28 @@ And so that our linter knows how to handle jest global variables like describe, 
 Because i already use Prettier with VSCode, i just installed a few dependencies with ```npm i -D prettier eslint-config-prettier eslint-plugin-prettier``` and then update the extends in the .**eslintrc** file with:
 ``` "extends": [ "airbnb", "plugin:prettier/recommended" ] ```
 
+## Navigation Bar
+* Create:
+ * a ```<NavBar />``` component which renders a ```<div>```, and import it into your ```<App />```
+ * a ```NavBar.css``` file in ```/styles```
+ * add logo image inside the <div>
+ * add an unordered list inside the <div> with two list elements to  your <ul>. Each list item will be a hyperlink, one with the text "View Properties" and the other with "Add a Property"
 
+**At this point, our app will crash, because hyperlink comes with some import and installations for the browser**.
+
+run ```npm install --save react-router-dom ```
+In NavBar.js: ```import { Link } from "react-router-dom";```
+In index.js: ``` import { BrowserRouter } from "react-router-dom";```
+So that our App is rendered thus;
+``` ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+``` 
 
 
 

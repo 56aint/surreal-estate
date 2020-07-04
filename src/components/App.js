@@ -1,15 +1,26 @@
-import React from 'react';
-import '../styles/App.css';
-import NavBar from './NavBar';
-import '../styles/NavBar.css';
+import React from "react";
+import "../styles/App.css";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import NavBar from "./NavBar";
+import Prpoperties from "./Properties";
+import AddProperty from "./AddProperty";
 
-const App = () => (
-  <div className="App">
-    <h2>Surreal Estate</h2>
+function App() {
+  return (
+    <div className="App">
+      <h2>Surreal Estate</h2>
 
-    <NavBar />
-
-  </div>
-);
+      <NavBar />
+      <switch>
+        <Route path="/" component={Prpoperties}>
+          
+        </Route>
+        <Route path="/add-property" component={AddProperty}>
+          
+        </Route>
+      </switch>
+    </div>
+  );
+}
 
 export default App;

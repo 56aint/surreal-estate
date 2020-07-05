@@ -9,11 +9,11 @@ const NavBar = () => {
       <img src={logo} alt="estate-logo" />
 
       <ul className="navbar-links">
-        <li className="navbar-link-item">
+        <li className="navbar-links-item">
           <Link to="/">View Property</Link>
         </li>
 
-        <li>
+        <li className="navbar-links-item">
           <Link to="/add-property">Add Property</Link>
         </li>
       </ul>

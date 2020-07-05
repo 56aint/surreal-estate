@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/App.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NavBar from "./NavBar";
-import Prpoperties from "./Properties";
+import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 
 function App() {
@@ -11,14 +11,10 @@ function App() {
       <h2>Surreal Estate</h2>
 
       <NavBar />
-      <switch>
-        <Route path="/" component={Prpoperties}>
-          
-        </Route>
-        <Route path="/add-property" component={AddProperty}>
-          
-        </Route>
-      </switch>
+      <Switch>
+        <Route exact path="/" component={Properties} />
+        <Route exact path="/add-property" component={AddProperty} />
+      </Switch>
     </div>
   );
 }

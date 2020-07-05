@@ -1,6 +1,7 @@
 .navbar {
+  display: flex;
   background-color: white;
-  border-bottom-color: grey;
+  border-bottom-color: grey; 
 }
 img {
   width: 20%;
@@ -11,7 +12,7 @@ img {
   margin: 0px;
   padding: 0%;
 }
-.navbar-links-items {
+.navbar-links-item {
   display: inline-block;
   margin: 0px;
   padding: 5%;

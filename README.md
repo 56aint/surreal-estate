@@ -142,8 +142,8 @@ Because i already use Prettier with VSCode, i just installed a few dependencies 
 
 run ```npm install --save react-router-dom ```
 In NavBar.js: ```import { Link } from "react-router-dom";```
-In index.js: ``` import { BrowserRouter } from "react-router-dom";```
-So that our App is rendered thus;
+In index.js: ``` import { BrowserRouter } from "react-router-dom";```. And wrap App inside ```<BrowserRouter />``` 
+So that our App is rendered in *index.js* thus;
 ``` ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -153,6 +153,29 @@ So that our App is rendered thus;
   document.getElementById("root")
 );
 ``` 
+We will create two components ```<Properties /> (Homepage) & <Addproperties /> (another page)```
+
+In App.js: ```import { Route, Switch } from "react-router-dom"; ```. And wrap * our ```<Route />``` paths components in ```<Switch />``` component. So that *App.js* looks like so;
+```
+function App() {
+  return (
+    <div className="App">
+      <h2>Surreal Estate</h2>
+
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Prpoperties} />
+        <Route path="/add-property" component={AddProperty} />
+      </Switch>
+    </div>
+  );
+}
+
+export default App;
+```
+Warapping *Route* in *Switch* make sure that only the page displayed in our browser is the specific page for the *Route path we intend to be*  
+```<Switch>``` will render a route exclusively, if there are two componets with the same path, it renders the the first matching one. In contrast to using ```<Route>``` on its own which renders all the matching route inclusively.
+
 
 
 

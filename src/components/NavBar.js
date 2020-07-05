@@ -10,7 +10,10 @@ const NavBar = () => {
 
       <ul className="navbar-links">
         <li className="navbar-links-item">
-          <Link to="/">View Property</Link>
+          <Link to="/">Home</Link>
+        </li>
+        <li className="navbar-links-item">
+          <Link to="/properties">View Property</Link>
         </li>
 
         <li className="navbar-links-item">

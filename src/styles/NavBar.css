@@ -1,5 +1,4 @@
 .navbar {
-  display: flex;
   background-color: white;
   border-bottom-color: grey; 
 }
@@ -9,11 +8,15 @@ img {
   align-self: center;
 }
 .navbar-links {
+  display: flex;
+  list-style: none;
+  border: 1px solid rgba(212, 20, 20, 0.144);
   margin: 0px;
   padding: 0%;
 }
 .navbar-links-item {
+  flex: 3;
   display: inline-block;
-  margin: 0px;
+  margin: 0;
   padding: 5%;
 }

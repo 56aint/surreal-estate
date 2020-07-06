@@ -1,0 +1,41 @@
+.add-property {
+  padding: 10px;
+  margin: 10px;
+}
+
+.add-property-button {
+  background: rgb(151, 3, 3);
+  color: white;
+  padding: 3px 20px;
+  margin: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.5s;
+  /*display: inline-block;*/
+}
+.add-property-button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+.add-property-button {
+  padding: 2px 15px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background: rgb(151, 3, 3);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.add-property-button:hover {background: rgba(238, 13, 13, 0.75);}
+
+.add-property-button:active {
+  background: rgba(238, 13, 13, 0.75);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

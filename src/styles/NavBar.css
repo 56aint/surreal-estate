@@ -1,16 +1,20 @@
 .navbar {
+  max-width: 1200px;
   background-color: white;
-  border-bottom-color: grey; 
+  margin: 0 auto; 
+  padding: 0 3em 1.5em;
 }
 img {
   width: 20%;
   height: 10%;
-  align-self: center;
+  opacity: 1;
+  padding: 0px;
+  margin-left: 10px;
 }
 .navbar-links {
   display: flex;
   list-style: none;
-  border: 1px solid rgba(212, 20, 20, 0.144);
+  border: 1px solid rgba(90, 131, 155, 0.144);
   margin: 0px;
   padding: 0%;
 }
@@ -19,4 +23,19 @@ img {
   display: inline-block;
   margin: 0;
   padding: 5%;
+}
+
+@media all and (max-width: 1000px) {
+  .navbar-links {
+     flex-wrap: wrap;
+  }
+  .navbar-links-item {
+     flex: 1 1 50%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .navbar-links-item {
+     flex-basis: 100%;
+  }
 }

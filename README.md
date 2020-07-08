@@ -176,7 +176,7 @@ export default App;
 Warapping *Route* in *Switch* make sure that only the page displayed in our browser is the specific page for the *Route path we intend to be*  
 ```<Switch>``` will render a route exclusively, if there are two componets with the same path, it renders the the first matching one. In contrast to using ```<Route>``` on its own which renders all the matching route inclusively.
 
-Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "") So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ```handleProperty() function``` is called and controls what has happened in that form on subsequent user input.
+Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "", .....) So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ```handleProperty() function``` is called and controls what has happened in that form on subsequent user input.
 
 
 

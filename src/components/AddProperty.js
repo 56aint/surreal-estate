@@ -21,7 +21,9 @@ const AddProperty = () => {
     console.log(fields);
   };
   const handleFieldChange = (event) => {
-    setFields({ ...fields, [event.target.name]: event.target.value });
+    const changeField = event.target.name;
+    const newValue = event.target.value;
+    setFields({ ...fields, [changeField]: newValue });
   };
 
   return (
@@ -96,20 +98,20 @@ const AddProperty = () => {
 
           <label htmlFor="title" className="form-label">
             Price
-            <input
-              placeholder="Property Price"
-              className="price-input"
-              type="currency"
-              id="price"
-              name="price"
-              value={fields.price}
-              onChange={handleFieldChange}
-            />
+            <span className="gbp">
+              <input
+                placeholder="Enter whole GBP (&pound;)"
+                type="number"
+                id="price"
+                name="price"
+                value={fields.price}
+                onChange={handleFieldChange}
+              />
+            </span>
           </label>
 
-
           <label htmlFor="title" className="form-label">
-            email
+            Email
             <input
               className=""
               placeholder="your email"

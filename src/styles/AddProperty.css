@@ -40,11 +40,11 @@
   transform: translateY(4px);
 }
 
-.price-input{
+/*.price-input{
   padding: 1px;
   font: 13px Arial;
   width: 15%;
-}
+}*/
 .number-input{
   padding: 1px;
   font: 13px Arial;
@@ -55,4 +55,13 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 5px;
+}
+span.gbp {
+  float: left;
+  text-align: left
+}
+span.gbp::before {
+  float: left;
+  content: "\00a3";
+  padding: 1px;
 }

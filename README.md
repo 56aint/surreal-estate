@@ -176,9 +176,39 @@ export default App;
 Warapping *Route* in *Switch* make sure that only the page displayed in our browser is the specific page for the *Route path we intend to be*  
 ```<Switch>``` will render a route exclusively, if there are two componets with the same path, it renders the the first matching one. In contrast to using ```<Route>``` on its own which renders all the matching route inclusively.
 
-Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "", .....) So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ```handleProperty() function``` is called and controls what has happened in that form on subsequent user input.
+Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "", .....) So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ``` handleProperty() function``` is called and controls what has happened in that form on subsequent user input
 
+Next, API
+We are going to be making use of an already made API.
 
+If you dont already have **Docker Engine** on your computer. Install Docker with: 
+```sudo apt install docker.io``` 
+Check if docker is installed:
+ ```docker --version```
+
+Run this command to download the current stable release of Docker Compose: 
+
+```sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+Apply executable permissions to the binary:
+```sudo chmod +x /usr/local/bin/docker-compose```
+
+Test if Docker Compose is installed:
+```$ docker-compose --version
+docker-compose version 1.26.2, build 1110ad01
+```
+* We will be runnning a pre-configured version of the API app and the required database with docker-compose.
+* Once docker-comopse is installed, you can start the app and database by running ```docker-compose up``` from the root of this project **In a new terminal tab, change directory into the API folder and run *docker-compose up*. This process fires up a local express server connected to a remote MongoDB database, so you'll need to keep this process running (don't close the tab).**
+* Alternately, you can run the app in detached mode by runninng 'docker-compose up -d' from the root of this project
+You will not see any output from the containers in detached mode. You can check their logs with ```docker-compose logs SERVICE_NAME```
+* You can stop the containers with ```docker-compose stop``` in the root of this project
+* You can start them again with ```docker-compose start```
+* You can tear down all the containers with ```docker-compose down```, or 
+```ctrl c in ther terminal window, if not running in detached mode```
+
+API repository:
+clone down the repo:
+```git clone git@github.com:MCRcodes/surreal-estate-api.git your project folder name```, ```cd project folder name``` & ```npm i```
 
 
 

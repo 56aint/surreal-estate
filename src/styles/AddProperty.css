@@ -6,30 +6,18 @@
 .add-property-button {
   background: rgb(151, 3, 3);
   color: white;
-  padding: 3px 20px;
-  margin: 10px;
-  font-size: 12px;
-  cursor: pointer;
-  border: none;
-  transition: all 0.5s;
-  /*display: inline-block;*/
-}
-.add-property-button {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-}
-.add-property-button {
   padding: 2px 15px;
-  font-size: 16px;
+  margin: 10px;
+  font-size: 15px;
   text-align: center;
   cursor: pointer;
-  outline: none;
-  color: #fff;
-  background: rgb(151, 3, 3);
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.5s;
   box-shadow: 0 9px #999;
+  display: inline-block;
+  position: relative;
 }
 
 .add-property-button:hover {background: rgba(238, 13, 13, 0.75);}
@@ -45,23 +33,50 @@
   font: 13px Arial;
   width: 15%;
 }*/
-.number-input{
-  padding: 1px;
-  font: 13px Arial;
-  width: 5%;
-}
 .form-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 5px;
 }
-span.gbp {
+input {
+  padding: 1px;
+  font: 11px Arial;
+  font-weight: bolder;
+  width: 30%;
+  height: 35px;
+}
+select {
+  padding: 1px;
+  font: 13px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  width: 30.5%;
+  height: 35px;
+}
+
+/*span.gbp {
   float: left;
-  text-align: left
+  text-align: left;
+  width: 30%;
+  height: 35px;
+}*/
+span.gbp {
+  padding: 1px;
+  font: 11px Arial;
+  font-weight: bolder;
+  width: 98%;
+  height: 25px;
 }
 span.gbp::before {
-  float: left;
   content: "\00a3";
+  padding: 1px;
+}
+
+.number-input {
+  font-size: large;
+}
+.email-input {
+  font-size: medium;
   padding: 1px;
 }

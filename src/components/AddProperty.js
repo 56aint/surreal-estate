@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 
+const axios = require("axios");
+
 const AddProperty = () => {
   const initialState = {
     fields: {
@@ -18,7 +20,17 @@ const AddProperty = () => {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    // console.log(fields);
+    axios
+      .post(`localhost:4000/api/v1/PropertyListing`, {
+        ...fields,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   const handleFieldChange = (event) => {
     const changeField = event.target.name;
@@ -100,6 +112,7 @@ const AddProperty = () => {
             Price
             <span className="gbp">
               <input
+                className="number-input"
                 placeholder="Enter whole GBP (&pound;)"
                 type="number"
                 id="price"
@@ -109,11 +122,11 @@ const AddProperty = () => {
               />
             </span>
           </label>
-
+          <br />
           <label htmlFor="title" className="form-label">
             Email
             <input
-              className=""
+              className="email-input"
               placeholder="your email"
               type="email"
               id="email"

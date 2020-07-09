@@ -1,0 +1,12 @@
+.Alert {
+  
+}
+.alert-success {
+  background-color: #848a86;
+  color: green;
+}
+
+.alert-error {
+  background-color: #848a86;
+  color: red;
+}

@@ -1,12 +1,27 @@
 .Alert {
-  
+
 }
 .alert-success {
-  background-color: #848a86;
+  background-color: grey;
   color: green;
 }
 
 .alert-error {
-  background-color: #848a86;
-  color: red;
+  font-size: 1rem;
+  text-align: center;
+   font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+   color: #fff;
+ text-shadow: 0 0 10px #cf0a0a, 0 0 20px #c50f0f, 0 0 30px #f00606, 0 0 40px #00fff2, 0 0 50px #29db19, 0 0 60px #00fff2, 0 0 70px #e90f3e, 0 0 90px #f00c1f;
+}
+
+to {
+  color: gray;
+ text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
+}
 }

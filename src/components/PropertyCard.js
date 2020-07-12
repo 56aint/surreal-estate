@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const PropertyCard = ({
-  title,
+  /*title,
   type,
   bathrooms,
   bedrooms,
@@ -62,9 +62,9 @@ PropertyCard.propTypes = {
   type: PropTypes.string.isRequired,
   bathrooms: PropTypes.string.isRequired,
   bedrooms: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
 };
 
-export default PropertyCard;
+export default PropertyCard;*/

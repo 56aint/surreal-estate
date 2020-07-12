@@ -1,0 +1,13 @@
+.property-card {
+  padding: 10px;
+  margin: 10px; 
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans"; 
+  background-color: #ffffff;
+  
+}
+.property-card_price::before {
+  content: "\00a3";
+  padding: 1px;
+}

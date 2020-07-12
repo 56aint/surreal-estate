@@ -1,14 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/PropertyCard.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const PropertyCard = ({
-  /*title,
-  type,
-  bathrooms,
-  bedrooms,
-  price,
-  city,
-  email,
+  title = "House",
+  type = "Detached",
+  bathrooms = "5",
+  bedrooms = "6",
+  price = "400,000",
+  city = "York",
+  email = (
+    <p>
+      <a href="mailto:cole@cole.com">
+        <FontAwesomeIcon icon={faEnvelope} />
+        Email
+      </a>
+    </p>
+  ),
 }) => {
   return (
     <div className="property-card">
@@ -26,12 +36,14 @@ const PropertyCard = ({
 
       <div>
         <span className="property-card_bathrooms" data-testid="p_bathrooms-id">
+          <FontAwesomeIcon icon={faBed} />
           {bathrooms}
         </span>
       </div>
 
       <div>
-        <span className="property-card_bedrooms" data-testid="p_bedrooms_id">
+        <span className="property-card_bedrooms" data-testid="p_bedrooms-id">
+          <FontAwesomeIcon icon={faBath} />
           {bedrooms}
         </span>
       </div>
@@ -67,4 +79,4 @@ PropertyCard.propTypes = {
   email: PropTypes.string.isRequired,
 };
 
-export default PropertyCard;*/
+export default PropertyCard;

@@ -180,36 +180,45 @@ Next, we transform ```AddProperty component ``` into a *form, with input field a
 
 We created ```AddProperty component```  using ```useState()``` react hook to keep track of the changes in our ```AddProperty component function & form```
 
-Fill out your form and click the "Add" button. If everything is done correctly then you should see an object logged out to the console which has key/value pairs matching your <input>/<select> names and values:
+Fill out your form and click the "Add" button. If everything is done correctly then you should see an object logged out to the console which has key/value pairs matching your ```<input>/<select>``` names and values:
 
-```{title: "4 bed house, type: "semi-detached,...}```
-  ```4 bed house```
-  ```Semi-Detached```
-  ```bathrooms: "2"```
-  ```bedrooms: "4"```
-  ```city: "Manchester"```
-  ```price: "700000"```
-  ```email: "myemail@email.com"```
+```
+{title: "4 bed house, type: "semi-detached,...}```
+ 4 bed house
+ Semi-Detached
+ bathrooms: "2"
+ bedrooms: "4"
+ city: "Manchester"
+ price: "700000"
+ email: "myemail@email.com"
+ ```
 
 Next, API:
 We are going to be making use of an already made API.
 
+
 clone down the repo:
+
 
 ```git clone git@github.com:MCRcodes/surreal-estate-api.git your project folder name```, ```cd project folder name``` & 
 ```npm install```
+
 
 If you dont already have **Docker Engine** on your computer. Install Docker with: 
 ```sudo apt install docker.io``` 
 Check if docker is installed:
  ```docker --version```
 
+
 Run this command to download the current stable release of Docker Compose: 
+
 
 ```sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
 
+
 Apply executable permissions to the binary:
 ```sudo chmod +x /usr/local/bin/docker-compose```
+
 
 Test if Docker Compose is installed:
 ```Run: docker-compose --version```
@@ -227,6 +236,7 @@ Test if Docker Compose is installed:
 ```ctrl c in ther terminal window, if not running in detached mode```
 
 * if you get the following error:
+
 ```
 ERROR: for surreal-estate-api_express-app_1  Cannot start service express-app: driver failed programming external
 connectivity on endpoint surreal-estate-api_express-app_1 (6c4ab9630051beb9ad4e9c3dfa5091a70fd82e151b019a64723eb438f0f0ee1c): 
@@ -234,12 +244,18 @@ Bind for 0.0.0.0:4000 failed: port is already allocated
 ```
 It means something else is using that port. To solve this problem open docker-compose.yaml (in surreal-estate-api directory) and change 4000 to other port, then run docker-compose up again.
 
+```
  Visit *http://localhost:4000/api-docs*
+ ```
 
 To check in which port your API is running, run this at the terminal:
 ``` express-app_1  | Surreal Estate API is running on :<PORT NUMBER> ```
 
+
+
 At this point, we can test our form submission with *POSTMAN*, doing CRUD (CREATE/POST, READ/GET, UPDATE/PUT/PATCH & DELETE) requests.
+
+
 
 REQUESTS WITH AXIOS:
 
@@ -254,6 +270,8 @@ We're going to create an <Alert /> component:
 Alert will let the user know the form submission was successful or unsuccessfull
 
 Importing and validating with ```prop-types``` and  Our <Alert /> will look like so;
+
+
 ```
 const Alert = ({ message, success }) => {
   if (!message) return null;
@@ -276,7 +294,11 @@ Alert.defaultProps = {
 };
 export default Alert;
 ```
+
+
 **Make some GET requests*
+
+
 
 NEXT...
 

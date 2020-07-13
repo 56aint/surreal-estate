@@ -244,14 +244,14 @@ Bind for 0.0.0.0:4000 failed: port is already allocated
 ```
 It means something else is using that port. To solve this problem open docker-compose.yaml (in surreal-estate-api directory) and change 4000 to other port, then run docker-compose up again.
 
-```
- Visit *http://localhost:4000/api-docs*
- ```
 
 To check in which port your API is running, run this at the terminal:
 ``` express-app_1  | Surreal Estate API is running on :<PORT NUMBER> ```
 
 
+```
+ Visit *http://localhost:4000/api-docs*
+ ```
 
 At this point, we can test our form submission with *POSTMAN*, doing CRUD (CREATE/POST, READ/GET, UPDATE/PUT/PATCH & DELETE) requests.
 
@@ -262,14 +262,14 @@ REQUESTS WITH AXIOS:
 Now lets use axios to make the bove requests. 
 * good shout if we can proceed from now on with TDD
 
-We're going to create an <Alert /> component:
+We're going to create an ```<Alert />```component:
 * It will take 2 props:
      * message a string of the text to display,
      * success a boolean, alert will be green if true by default, but red if false (which means there was an error).
 
 Alert will let the user know the form submission was successful or unsuccessfull
 
-Importing and validating with ```prop-types``` and  Our <Alert /> will look like so;
+Importing and validating with ```prop-types``` and  Our ```<Alert />``` will look like so;
 
 
 ```
@@ -302,9 +302,9 @@ export default Alert;
 
 NEXT...
 
-We are going to create a <PropertyCard />, and use ```useEffect() hook``` to GET(request) *property listings* from the <Properties />(component we created earlier)from the API & render <PropertyCard /> for each property.
+We are going to create a ```<PropertyCard />```, and use ```useEffect() hook``` to GET(request) *property listings* from the ```<Properties />```(component we created earlier)from the API & render ```<PropertyCard />``` for each property.
 
-We will also pass <PropertyCard /> some dummy values for its props(title, type, bathrooms, bedrooms, price, city, & email), so we can view and style what we expect from our GET request from the API.
+We will also pass ```<PropertyCard />``` some dummy values for its props(title, type, bathrooms, bedrooms, price, city, & email), so we can view and style what we expect from our GET request from the API.
 
 ## Installations for <PropertyCard />
 ``` npm i -S prop-types as project dependency```
@@ -318,9 +318,9 @@ npm i --save @fortawesome/react-fontawesome
 *import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";*
 *import "../styles/PropertyCard.css";*
 
-Now to the <Properties /> component. We are going to do something similar to what we did with <AddProperties />, using Axios, alert, but this time we will be making our Axios GET request inside ```useEffect() hook```  
+Now to the ```<Properties />``` component. We are going to do something similar to what we did with ```<AddProperties />```, using Axios, alert, but this time we will be making our Axios GET request inside ```useEffect() hook```  
 
-And we are going to map over the ```properties``` state, and pass each *key/value pair* from each *property listing* to the <PropertyCard /> component as props and and render it inside our <Properties /> return fragment. 
+And we are going to map over the ```properties``` state, and pass each *key/value pair* from each *property listing* to the ```<PropertyCard />``` component as props and and render it inside our ```<Properties />``` return fragment. 
 ```
 return (
     <>
@@ -345,7 +345,7 @@ return (
     city={property.city}
  />
 ```
-You can test the <Alert /> by killing your API process(```ctrl c``` in ther terminal window of the API container )
+You can test the ```<Alert />``` by killing your API process(```ctrl c``` in ther terminal window of the API container )
 
 
 

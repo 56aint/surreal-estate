@@ -176,10 +176,28 @@ export default App;
 Warapping *Route* in *Switch* make sure that only the page displayed in our browser is the specific page for the *Route path we intend to be*  
 ```<Switch>``` will render a route exclusively, if there are two componets with the same path, it renders the the first matching one. In contrast to using ```<Route>``` on its own which renders all the matching route inclusively.
 
-Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "", .....) So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ``` handleProperty() function``` is called and controls what has happened in that form on subsequent user input
+Next, we transform ```AddProperty component ``` into a *form, with input field and button* (as controlled components). The form has an initialState of ```key:value pair``` (fields: title: "", .....) So that when the user is typing & before the button is clicked, ```handleFieldChange() function``` is called and updates what happens in that form based on user input. And when the *submit button* is clicked, ``` handleProperty() function``` is called and controls what has happened in that form on subsequent user input.
 
-Next, API
+We created ```AddProperty component```  using ```useState()``` react hook to keep track of the changes in our ```AddProperty component function & form```
+
+Fill out your form and click the "Add" button. If everything is done correctly then you should see an object logged out to the console which has key/value pairs matching your <input>/<select> names and values:
+
+```{title: "4 bed house, type: "semi-detached,...}```
+  ```4 bed house```
+  ```Semi-Detached```
+  ```bathrooms: "2"```
+  ```bedrooms: "4"```
+  ```city: "Manchester"```
+  ```price: "700000"```
+  ```email: "myemail@email.com"```
+
+Next, API:
 We are going to be making use of an already made API.
+
+clone down the repo:
+
+```git clone git@github.com:MCRcodes/surreal-estate-api.git your project folder name```, ```cd project folder name``` & 
+```npm install```
 
 If you dont already have **Docker Engine** on your computer. Install Docker with: 
 ```sudo apt install docker.io``` 
@@ -188,38 +206,124 @@ Check if docker is installed:
 
 Run this command to download the current stable release of Docker Compose: 
 
-```sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-```
+```sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
+
 Apply executable permissions to the binary:
 ```sudo chmod +x /usr/local/bin/docker-compose```
 
 Test if Docker Compose is installed:
-```$ docker-compose --version
-docker-compose version 1.26.2, build 1110ad01
-```
-* We will be runnning a pre-configured version of the API app and the required database with docker-compose.
-* Once docker-comopse is installed, you can start the app and database by running ```docker-compose up``` from the root of this project **In a new terminal tab, change directory into the API folder and run *docker-compose up*. This process fires up a local express server connected to a remote MongoDB database, so you'll need to keep this process running (don't close the tab).**
-* Alternately, you can run the app in detached mode by runninng 'docker-compose up -d' from the root of this project
-You will not see any output from the containers in detached mode. You can check their logs with ```docker-compose logs SERVICE_NAME```
+```Run: docker-compose --version```
+```docker-compose version 1.26.2, build 1110ad01```
+
+
+* As we will be runnning a pre-configured version of the API app and the required database with docker-compose.
+    * Alternately, you can run the app in detached mode by runninng 'docker-compose up -d' from the root of this project
+    You will not see any output from the containers in detached mode. You can check their logs with ```docker-compose logs SERVICE_NAME```
+* Once docker-comopse is installed, you can start the app and database by running ```docker-compose up``` from the root of this project. **In a new terminal tab, change directory into the API folder and run *docker-compose up*. This process fires up a local express server connected to a remote MongoDB database, so you'll need to keep this process running (don't close the tab).**
+
 * You can stop the containers with ```docker-compose stop``` in the root of this project
 * You can start them again with ```docker-compose start```
 * You can tear down all the containers with ```docker-compose down```, or 
 ```ctrl c in ther terminal window, if not running in detached mode```
 
-API repository:
-clone down the repo:
-```git clone git@github.com:MCRcodes/surreal-estate-api.git your project folder name```, ```cd project folder name``` & ```npm i```
+* if you get the following error:
+```
+ERROR: for surreal-estate-api_express-app_1  Cannot start service express-app: driver failed programming external
+connectivity on endpoint surreal-estate-api_express-app_1 (6c4ab9630051beb9ad4e9c3dfa5091a70fd82e151b019a64723eb438f0f0ee1c): 
+Bind for 0.0.0.0:4000 failed: port is already allocated
+```
+It means something else is using that port. To solve this problem open docker-compose.yaml (in surreal-estate-api directory) and change 4000 to other port, then run docker-compose up again.
 
+ Visit *http://localhost:4000/api-docs*
 
+To check in which port your API is running, run this at the terminal:
+``` express-app_1  | Surreal Estate API is running on :<PORT NUMBER> ```
 
+At this point, we can test our form submission with *POSTMAN*, doing CRUD (CREATE/POST, READ/GET, UPDATE/PUT/PATCH & DELETE) requests.
 
+REQUESTS WITH AXIOS:
 
+Now lets use axios to make the bove requests. 
+* good shout if we can proceed from now on with TDD
 
+We're going to create an <Alert /> component:
+* It will take 2 props:
+     * message a string of the text to display,
+     * success a boolean, alert will be green if true by default, but red if false (which means there was an error).
 
+Alert will let the user know the form submission was successful or unsuccessfull
 
+Importing and validating with ```prop-types``` and  Our <Alert /> will look like so;
+```
+const Alert = ({ message, success }) => {
+  if (!message) return null;
 
+  return (
+    <>
+      <div className={`Alert alert-${success ? "success" : "error"}`}>
+        {message}
+      </div>
+    </>
+  );
+};
 
+Alert.propTypes = {
+  message: Proptypes.string.isRequired,
+  success: Proptypes.bool,
+};
+Alert.defaultProps = {
+  success: false,
+};
+export default Alert;
+```
+**Make some GET requests*
 
+NEXT...
+
+We are going to create a <PropertyCard />, and use ```useEffect() hook``` to GET(request) *property listings* from the <Properties />(component we created earlier)from the API & render <PropertyCard /> for each property.
+
+We will also pass <PropertyCard /> some dummy values for its props(title, type, bathrooms, bedrooms, price, city, & email), so we can view and style what we expect from our GET request from the API.
+
+## Installations for <PropertyCard />
+``` npm i -S prop-types as project dependency```
+*import PropTypes from "prop-types"*
+```
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons 
+npm i --save @fortawesome/react-fontawesome
+```
+*import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";*
+*import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";*
+*import "../styles/PropertyCard.css";*
+
+Now to the <Properties /> component. We are going to do something similar to what we did with <AddProperties />, using Axios, alert, but this time we will be making our Axios GET request inside ```useEffect() hook```  
+
+And we are going to map over the ```properties``` state, and pass each *key/value pair* from each *property listing* to the <PropertyCard /> component as props and and render it inside our <Properties /> return fragment. 
+```
+return (
+    <>
+      <div>
+        <Alert message={alert.message} success={alert.isSuccess} />
+        {properties.map((property) => (
+          <PropertyCard key={property._id} {...property} />
+        ))}
+      </div>
+    </>
+  );
+  ```
+  **Without spread operator:**
+  ```
+ <PropertyCard 
+    key={property._id} 
+    title={property.title} 
+    bathrooms={property.bathrooms} 
+    bedrooms={property.bedrooms} 
+    type={property.type}
+    email={property.email}
+    city={property.city}
+ />
+```
+You can test the <Alert /> by killing your API process(```ctrl c``` in ther terminal window of the API container )
 
 
 

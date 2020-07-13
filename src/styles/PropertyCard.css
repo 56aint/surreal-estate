@@ -11,3 +11,9 @@
   content: "\00a3";
   padding: 1px;
 }
+.property-card_email {
+  color: aliceblue;
+  background-color: rgb(151, 3, 3);
+  width: 100%;
+  font-size: medium;
+}

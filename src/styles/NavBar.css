@@ -1,7 +1,7 @@
 .navbar {
   background-color: white;
-  margin: 0 auto;
-  padding: 0 3em 1.5em;
+  margin-left: 160px;
+  padding: 0 10px;
 }
 img {
   width: 20%;
@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  background: rgba(238, 13, 13, 0.75);
+  color: #17bbd8;
 }
 
 .navbar-links {

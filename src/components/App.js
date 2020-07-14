@@ -17,7 +17,7 @@ function App() {
       <SideBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/properties" component={SideBar} />
+        <Route exact path="/properties" component={Properties} />
         <Route exact path="/add-property" component={AddProperty} />
       </Switch>
     </div>

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
+import SideBar from "./SideBar";
 
 const Properties = () => {
   const initialState = {
@@ -16,11 +18,10 @@ const Properties = () => {
 
   const [alert, setAlert] = useState(initialState.alert);
 
+  const { search } = useLocation();
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing`, {
-        properties,
-      })
+      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
       .then(({ data }) => {
         setProperties(data);
       })
@@ -32,7 +33,7 @@ const Properties = () => {
           isSuccess: false,
         });
       });
-  }, []);
+  }, [search]);
 
   return (
     <>

@@ -347,6 +347,61 @@ return (
 ```
 You can test the ```<Alert />``` by killing your API process(```ctrl c``` in ther terminal window of the API container )
 
+## Filtering by City
+
+We need to filter our properties by city, so we create a ```<SideBard /> component``` containing the city ```links```. SideBar component is rendered by **properties path in App.js** 
+
+When any of these ```city link``` is clicked, the address bar is updated. We want to hook into this update with the ```<Properties /> component``` to make a new request to the API. We start this by destructuring ```{ search } from useLocation()``` and assigning ```search``` to ```useEffect()``` as the second argument.
+  * A React component re-renders every time props or state change and upon each re-render this hook will check if this re-render was caused by search changing. If yes, it will run any code inside the inline function, otherwise it will do nothing.
+
+So we are also able to sort (price asc & decs) combined with by-city-finding.
+```Install:
+npm i qs
+Into <Sidebar />: import qs from "qs";
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

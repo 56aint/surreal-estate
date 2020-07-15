@@ -19,20 +19,40 @@ const SideBar = () => {
     });
   };
   return (
-    <div className="sidebar">
-      <p className="sidebar-title">Filter by City</p>
-      <Link to={buildQueryString("query", { city: "Manchester" })}>
-        Manchester
-      </Link>
-      <Link to={buildQueryString("query", { city: "Leeds" })}>Leeds</Link>
-      <Link to={buildQueryString("query", { city: "Shefield" })}>Shefield</Link>
-      <Link to={buildQueryString("query", { city: "Liverpool" })}>
-        Liverpool
-      </Link>
-      <p className="sidebar-title">Sort by</p>
-      <Link to={buildQueryString("sort", { price: 1 })}>Price Ascending</Link>
-      <Link to={buildQueryString("sort", { price: -1 })}>Price Descending</Link>
-    </div>
+    <nav role="navigation">
+      <div className="sidebarToggle">
+        <input name="toggle" type="checkbox" />
+        <label htmlFor="toggle">
+          <span>menu</span>
+          <div />
+          <div />
+          <div />
+        </label>
+
+        <ul className="sidebar">
+          <p className="sidebar-title">Filter by City</p>
+          <Link to={buildQueryString("query", { city: "Manchester" })}>
+            <li>Manchester</li>
+          </Link>
+          <Link to={buildQueryString("query", { city: "Leeds" })}>
+            <li>Leeds</li>
+          </Link>
+          <Link to={buildQueryString("query", { city: "Shefield" })}>
+            <li>Shefield</li>
+          </Link>
+          <Link to={buildQueryString("query", { city: "Liverpool" })}>
+            <li>Liverpool</li>
+          </Link>
+          <p className="sidebar-title">Sort by</p>
+          <Link to={buildQueryString("sort", { price: 1 })}>
+            <li>Price Ascending</li>
+          </Link>
+          <Link to={buildQueryString("sort", { price: -1 })}>
+            <li>Price Descending</li>
+          </Link>
+        </ul>
+      </div>
+    </nav>
   );
 };
 

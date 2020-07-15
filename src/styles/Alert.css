@@ -4,6 +4,7 @@
 .alert-success {
   background-color: grey;
   color: green;
+  text-align: center;
 }
 
 .alert-error {

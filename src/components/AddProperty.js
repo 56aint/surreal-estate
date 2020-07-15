@@ -8,12 +8,12 @@ const AddProperty = () => {
   const initialState = {
     fields: {
       title: "",
-      city: "Manchester",
-      type: "Flat",
-      bedrooms: 3,
-      bathrooms: 1,
-      price: 300000,
-      email: "myemail@email.com",
+      city: "",
+      type: "",
+      bedrooms: "",
+      bathrooms: "",
+      price: "",
+      email: "",
     },
     alert: {
       message: "",
@@ -78,6 +78,7 @@ const AddProperty = () => {
               value="fields.city"
               onChange={handleFieldChange}
             >
+              <option value="">Choose a city</option>
               <option value="Manchester">Manchester</option>
               <option value="Leeds">Leeds</option>
               <option value="Shefield">Shefield</option>
@@ -92,6 +93,7 @@ const AddProperty = () => {
               value="fields.type"
               onChange={handleFieldChange}
             >
+              <option value="">Choose a Property type</option>
               <option value="Flat">Flat</option>
               <option value="Detached">Detached</option>
               <option value="Semi-Detached">Semi-Detached</option>

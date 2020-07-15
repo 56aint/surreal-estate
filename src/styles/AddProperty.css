@@ -1,12 +1,12 @@
 .add-property {
-  padding: 10px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .add-property-button {
   width: 30%;
   position: absolute;
-  top: 100%;
+  /*top: 100%;*/
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -45,7 +45,7 @@
   align-items: center;
   padding: 5px;
 }
-input {
+input[type = number] {
   width: 50%;
   padding: 2px 20px;
   margin: 8px 0;
@@ -53,18 +53,39 @@ input {
   border-radius: 4px;
   font: 11px Arial;
   font-weight: bolder;
-  
   height: 35px;
 }
-select {
+
+input[type = text], select {
   width: 50%;
-  padding: 4px 20px;
+  padding: 2px 20px;
+  box-sizing: border-box;
   border-radius: 4px;
   font: 13px;
   font-family: sans-serif;
   font-weight: bolder;
   height: 35px;
 }
+
+input[type = email] {
+  width: 50%;
+  padding: 2px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font: 13px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  height: 35px;
+}
+/*span.property-type {
+  display: inline-block;
+  text-align: center;
+  padding: 1px;
+  font: 11px Arial;
+  font-weight: bolder;
+  width: 100%;
+  height: 35px;
+}*/
 
 /*span.gbp {
   float: left;
@@ -86,10 +107,10 @@ span.gbp::before {
   padding: 1px;
 }
 
-.number-input {
+/*.number-input {
   font-size: large;
 }
 .email-input {
   font-size: medium;
   padding: 1px;
-}
+}*/

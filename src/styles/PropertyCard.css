@@ -21,3 +21,6 @@
   width: 100%;
   font-size: medium;
 }
+.property-card_title {
+  font-weight: bold;
+}

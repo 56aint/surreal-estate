@@ -52,6 +52,7 @@ const AddProperty = () => {
     const changeField = event.target.name;
     const newValue = event.target.value;
     setFields({ ...fields, [changeField]: newValue });
+    console.log(fields);
   };
 
   return (
@@ -75,7 +76,7 @@ const AddProperty = () => {
             <select
               id="city"
               name="city"
-              value="fields.city"
+              value={fields.city}
               onChange={handleFieldChange}
             >
               <option value="">Choose a city</option>
@@ -90,7 +91,7 @@ const AddProperty = () => {
             <select
               id="type"
               name="type"
-              value="fields.type"
+              value={fields.type}
               onChange={handleFieldChange}
             >
               <option value="">Choose a Property type</option>
@@ -103,7 +104,7 @@ const AddProperty = () => {
               <option value="Bungalow">Bungalow</option>
             </select>
           </label>
-          <label htmlFor="title" className="form-label">
+          <label htmlFor="bedrooms" className="form-label">
             Bedrooms
             <input
               className="number-input"
@@ -115,7 +116,7 @@ const AddProperty = () => {
             />
           </label>
 
-          <label htmlFor="title" className="form-label">
+          <label htmlFor="bathrooms" className="form-label">
             Bathrooms
             <input
               className="number-input"
@@ -127,7 +128,7 @@ const AddProperty = () => {
             />
           </label>
 
-          <label htmlFor="title" className="form-label">
+          <label htmlFor="price" className="form-label">
             Price
             <span className="gbp">
               <input
@@ -142,7 +143,7 @@ const AddProperty = () => {
             </span>
           </label>
           <br />
-          <label htmlFor="title" className="form-label">
+          <label htmlFor="email" className="form-label">
             Email
             <input
               className="email-input"

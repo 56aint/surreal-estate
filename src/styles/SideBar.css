@@ -1,4 +1,12 @@
-
+p{
+  font-weight: bolder;
+  display: block;
+  text-align: left;
+  margin-top: 0em ;
+  margin-bottom: 0em ;
+  /*line-height: 1.5;*/
+  text-indent: 10px ;
+}
 .sidebarToggle {
   /*display: block;*/
    /*height: 100%;
@@ -28,7 +36,7 @@
   padding: 6px 8px 6px 16px;
 }
 
-.sideToggle a:hover {
+.sidebarToggle a:hover {
   color: #0b66a7;
 }
 
@@ -46,6 +54,18 @@
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
   -webkit-touch-callout: none;
+}
+
+.property-search-form{
+  width: 25%;
+  height: 50px;
+}
+.property-search-button{
+  width: 25%;
+  height: 32px;
+  
+  /*top: 100%;*/
+  transform: translate(5%, 5%);
 }
 
 .sidebarToggle label {
@@ -78,7 +98,7 @@
   transition: all 0.3s ease;
 }
 
-.sdiebarToggle label div:first-child {
+.sidebarToggle label div:first-child {
   -webkit-transform-origin: 0% 100%;
       -ms-transform-origin: 0% 100%;
           transform-origin: 0% 100%;

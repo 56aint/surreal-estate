@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 // import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/SideBar.css";
 
 const SideBar = () => {
@@ -11,15 +13,44 @@ const SideBar = () => {
 
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+        ...JSON.parse(currentQueryParams[operation] || "{}"),
+        ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
       encode: false,
     });
   };
+
+  const [query, setQuery] = useState("");
+
+  const history = useHistory();
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryString = buildQueryString("query", {
+      title: { $regex: query },
+    });
+    history.push(newQueryString);
+  };
+
   return (
     <nav role="navigation">
+      <form className="property-search-form" onSubmit={handleSearch}>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+
+        <button type="submit" className="property-search-button">
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
+      </form>
+      <p>View</p>
+      <p>Options</p>
       <div className="sidebarToggle">
         <input name="toggle" type="checkbox" />
         <label htmlFor="toggle">

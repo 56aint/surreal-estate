@@ -354,16 +354,37 @@ We need to filter our properties by city, so we create a ```<SideBard /> compone
 When any of these ```city link``` is clicked, the address bar is updated. We want to hook into this update with the ```<Properties /> component``` to make a new request to the API. We start this by destructuring ```{ search } from useLocation()``` and assigning ```search``` to ```useEffect()``` as the second argument.
   * A React component re-renders every time props or state change and upon each re-render this hook will check if this re-render was caused by search changing. If yes, it will run any code inside the inline function, otherwise it will do nothing.
 
-So we are also able to sort (price asc & decs) combined with by-city-finding.
+## Sorting by price
+
+We want to be able to ```sort (price asc & decs)```   with the ```sort``` query parameter, and combined it with ```filtering-by-city``` we have done using the ```query``` query parameter.
+
+*This is done with ```?sort={"<field_to_sort_by>":1} (1 is sort ascending, -1 is sort descending).```*
+**There's one small spanner in the works for this one...if you link to ```?sort={"price":1}``` then you can't link to a ```city```. We therefore need to find a way to combine the query parameters so we have a query string like: ```?query={"city":"Exeter"}&sort={"price": 1}```**
+
 ```Install:
 npm i qs
 Into <Sidebar />: import qs from "qs";
 ```
 
+## Search by Title
 
+Now lets give our ```SearchBar``` component a search capability.  We have previously been able to filter with query parameter as thus: 
 
+```?query={"city":"Exeter"}``` 
 
+Our search form will be able search like so: 
 
+```?query={"title":{"$regex":"<search_query_here>"}}```
+So with ```$regex``` being the key, if we pass a an ```object as the value: e.g *bungalow*```, our regex search will match *bungalow* against part of the field's value.
+So if we did: ```?query={"title":{"$regex":"bungalow"}}```
+Then we'd get back all properties with the word *bungalow* in the title. 
+
+This search functionality is not an advanced one like **Elastic Search**.
+
+```
+  *Note: import { useHistory } from "react-router-dom";*
+  *useHistory() will change the URL to our new query string returned from the buildQueryString() function.*
+```
 
 
 

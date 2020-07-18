@@ -4,10 +4,11 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import "../styles/SideBar.css";
+import "../styles/SideBar.css";
 
 const SideBar = () => {
   const { search } = useLocation();
+
   const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
 

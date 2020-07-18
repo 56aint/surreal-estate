@@ -2,8 +2,9 @@ import React, { useState } from "react";
 // import styled from "styled-components";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import "../styles/SideBar.css";
 
 const SideBar = () => {

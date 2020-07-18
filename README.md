@@ -385,8 +385,10 @@ This search functionality is not an advanced one like **Elastic Search**.
   *Note: import { useHistory } from "react-router-dom";*
   *useHistory() will change the URL to our new query string returned from the buildQueryString() function.*
 ```
+## Single sign-on
+We're going to use Facebook's JavaScript API to implement SSO into our application.
 
-
+``` Run: npm install react-facebook-login ```
 
 
 

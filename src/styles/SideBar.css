@@ -29,11 +29,14 @@ p{
  .sidebarToggle a {
   display: block;
   text-decoration: none;
-  color: white;
+  color: rgb(233, 214, 214);
   -webkit-transition: color 0.3s ease;
   -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   padding: 6px 8px 6px 16px;
+  background: rgb(153, 16, 16);
+  width: fit-content;
+  height: fit-content;
 }
 
 .sidebarToggle a:hover {

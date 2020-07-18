@@ -10,7 +10,7 @@ img {
   padding: 0px;
   margin-left: 10px;
 }
-a {
+.navbar a {
   color: white;
   font-weight: 700;
   letter-spacing: 2px;
@@ -22,7 +22,7 @@ a {
   text-align: center;
 }
 
-a:hover {
+.navbar a:hover {
   color: #17bbd8;
 }
 
@@ -39,6 +39,44 @@ a:hover {
   margin: 0;
   padding: 5%;
 }
+.navbar .fb-sign-in-form {
+  float: right;
+}
+
+.navbar .fb-sign-in-form button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 10px;
+  background: rgb(153, 16, 16);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.navbar .fb-sign-in-form button:hover {
+  background: rgb(5, 36, 177);
+}
+
+.navbar .tooltiptext {
+  visibility: hidden;
+  width: 60px;
+  background-color: rgb(10, 3, 107);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  top: -5px;
+  right: 105%;
+}
+.navbar:hover .tooltiptext {
+  visibility: visible;
+  
+}
+
+
+
 
 @media all and (max-width: 1000px) {
   .navbar-links {
@@ -47,10 +85,19 @@ a:hover {
   .navbar-links-item {
      flex: 1 1 50%;
   }
+
+  .fb-sign-in-form {
+    flex: 1 1 33.33%;
+ }
 }
 
 @media all and (max-width: 480px) {
   .navbar-links-item {
      flex-basis: 100%;
   }
+
+  .fb-sign-in-form {
+    flex-basis: 50%;
+ }
 }
+

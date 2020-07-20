@@ -389,9 +389,59 @@ This search functionality is not an advanced one like **Elastic Search**.
 We're going to use Facebook's JavaScript API to implement SSO into our application.
 
 ``` Run: npm install react-facebook-login 
-import FacebookLogin from 'react-facebook-login';
+         import FacebookLogin from 'react-facebook-login';
+         npm install react react-dom react-facebook-login --save --force
 ```
+This step needs registration for a *fb dev account* to get an ``appId``
+We will modify our ```<FacebookLogin /> component``` to look like this; 
 
+If the ```userID``` prop has a truthy value, then show a ```sign out button``` with the text **"Sign Out"**, otherwise show the ```<FacebookLogin /> component```.
+```
+<form className="fb-sign-in-form">
+            {userID ? (
+              <button type="submit" onClick={onLogout}>
+                <FaSignOutAlt />
+                Sign Out
+              </button>
+            ) : (
+              <FacebookLogin
+                appId="2769895153231866"
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={onLogin}
+                cssClass="facebook-login-class"
+              />
+            )}
+ </form>
+```
+Rendering the login component in ```<App > componet```, we have;
+
+```
+function App() {
+  const [userID, setUserID] = useState("");
+
+  const handleLogin = (response) => {
+    setUserID(response.id);
+  };
+
+  const handleLogout = () => {
+    window.FB.logout(() => setUserID(""));
+  };
+
+  return (
+    <div className="App">
+      <NavBar onLogin={handleLogin} userID={userID} onLogout={handleLogout} />
+
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/properties" component={Properties} />
+        <Route exact path="/add-property" component={AddProperty} />
+      </Switch>
+    </div>
+  );
+}
+```
+***Note: I have moved ```<SideBar /> component``` to be rendered under ```<Properties /> component``` where it belongs.*** 
 
 
 

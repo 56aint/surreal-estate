@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 import "../styles/NavBar.css";
-import { FaFacebookSquare, FaSignInAlt } from "react-icons/fa";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { FaFacebookSquare, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+// import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import FacebookLogin from "react-facebook-login";
 
 import logo from "../images/logo.png";
 
-const NavBar = () => {
-  const responseFacebook = (response) => {
-    console.log(response);
+const NavBar = ({ onLogin, onLogout, userID }) => {
+  const handleLogin = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -29,18 +31,20 @@ const NavBar = () => {
         </li>
         <div form-tooltip>
           <form className="fb-sign-in-form">
-            <FacebookLogin
-              appId="1088597931155576"
-              autoLoad
-              callback={responseFacebook}
-              render={(renderProps) => (
-                <button type="submit" onClick={renderProps.onClick}>
-                  <FaSignInAlt />
-                  <FaFacebookSquare />
-                  <span className="tooltiptext">LOGIN WITH FACEBOOK</span>
-                </button>
-              )}
-            />
+            {userID ? (
+              <button type="submit" onClick={onLogout}>
+                <FaSignOutAlt />
+                Sign Out
+              </button>
+            ) : (
+              <FacebookLogin
+                appId="2769895153231866"
+                autoLoad={false}
+                fields="name,email,picture"
+                callback={onLogin}
+                cssClass="facebook-login-class"
+              />
+            )}
           </form>
         </div>
       </ul>
@@ -48,4 +52,9 @@ const NavBar = () => {
   );
 };
 
+NavBar.propTypes = {
+  onLogin: propTypes.func.isRequired,
+  onLogout: propTypes.func.isRequired,
+  userID: propTypes.func.isRequired,
+};
 export default NavBar;

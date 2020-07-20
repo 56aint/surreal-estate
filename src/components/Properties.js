@@ -38,6 +38,7 @@ const Properties = () => {
   return (
     <>
       <div>
+        <SideBar />
         {properties.map((property) => (
           <PropertyCard key={property._id} {...property} />
         ))}

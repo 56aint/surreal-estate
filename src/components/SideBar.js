@@ -35,12 +35,21 @@ const SideBar = () => {
     const newQueryString = buildQueryString("query", {
       title: { $regex: query },
     });
+    console.log(query);
     history.push(newQueryString);
+  };
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
   };
 
   return (
     <nav role="navigation">
-      <form className="property-search-form" onSubmit={handleSearch}>
+      <form
+        className="property-search-form"
+        onChange={(e) => handleInputChange(e)}
+        onSubmit={(e) => handleSearch(e)}
+      >
         <input
           type="text"
           value={query}

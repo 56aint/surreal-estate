@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import SideBar from "./SideBar";
 
-const Properties = () => {
+const Properties = ({ userID }) => {
   const initialState = {
     properties: [],
     alert: {
@@ -37,15 +38,21 @@ const Properties = () => {
 
   return (
     <>
-      <div>
+      <div className="properties">
         <SideBar />
+
         {properties.map((property) => (
-          <PropertyCard key={property._id} {...property} />
+          <PropertyCard key={property._id} {...property} userID={userID} />
         ))}
         <Alert message={alert.message} success={alert.isSuccess} />
+
       </div>
     </>
   );
+};
+
+Properties.propTypes = {
+  userID: PropTypes.string.isRequired,
 };
 
 export default Properties;

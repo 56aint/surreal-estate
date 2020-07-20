@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBath,
+  faBed,
+  faEnvelope,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 import "../styles/PropertyCard.css";
 
 const PropertyCard = ({
@@ -13,6 +18,8 @@ const PropertyCard = ({
   price,
   city,
   email,
+  userID,
+  onSaveProperty,
 }) => {
   return (
     <div className="property-card">
@@ -60,6 +67,11 @@ const PropertyCard = ({
           {email}
         </span>
       </div>
+      {userID && (
+        <button className="save-button" href="#">
+          <FontAwesomeIcon icon={faStar} /> Save
+        </button>
+      )}
     </div>
   );
 };
@@ -72,6 +84,8 @@ PropertyCard.propTypes = {
   price: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  userID: PropTypes.string.isRequired,
+  onSaveProperty: PropTypes.func.isRequired,
 };
 
 export default PropertyCard;

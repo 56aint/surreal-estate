@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 import { FaFacebookSquare, FaSignInAlt } from "react-icons/fa";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 import logo from "../images/logo.png";
 
 const NavBar = () => {
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
   return (
     <div className="navbar">
       <img src={logo} alt="estate-logo" />
@@ -24,11 +29,18 @@ const NavBar = () => {
         </li>
         <div form-tooltip>
           <form className="fb-sign-in-form">
-            <button type="submit">
-              <FaSignInAlt />
-              <FaFacebookSquare />
-            </button>
-            <span className="tooltiptext">LOGIN WITH FACEBOOK</span>
+            <FacebookLogin
+              appId="1088597931155576"
+              autoLoad
+              callback={responseFacebook}
+              render={(renderProps) => (
+                <button type="submit" onClick={renderProps.onClick}>
+                  <FaSignInAlt />
+                  <FaFacebookSquare />
+                  <span className="tooltiptext">LOGIN WITH FACEBOOK</span>
+                </button>
+              )}
+            />
           </form>
         </div>
       </ul>

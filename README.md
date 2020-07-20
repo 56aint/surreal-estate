@@ -388,7 +388,9 @@ This search functionality is not an advanced one like **Elastic Search**.
 ## Single sign-on
 We're going to use Facebook's JavaScript API to implement SSO into our application.
 
-``` Run: npm install react-facebook-login ```
+``` Run: npm install react-facebook-login 
+import FacebookLogin from 'react-facebook-login';
+```
 
 
 

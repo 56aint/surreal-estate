@@ -9,10 +9,6 @@ import FacebookLogin from "react-facebook-login";
 import logo from "../images/logo.png";
 
 const NavBar = ({ onLogin, onLogout, userID }) => {
-  const handleLogin = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <div className="navbar">
       <img src={logo} alt="estate-logo" />
@@ -39,10 +35,16 @@ const NavBar = ({ onLogin, onLogout, userID }) => {
             ) : (
               <FacebookLogin
                 appId="2769895153231866"
-                autoLoad={false}
+                autoLoad
                 fields="name,email,picture"
                 callback={onLogin}
-                cssClass="facebook-login-class"
+                render={(renderProps) => (
+                  <button type="submit" onClick={renderProps.onLogin}>
+                    <FaSignInAlt />
+                    <FaFacebookSquare />
+                    <span className="tooltiptext">LOGIN WITH FACEBOOK</span>
+                  </button>
+                )}
               />
             )}
           </form>

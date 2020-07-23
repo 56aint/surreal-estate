@@ -1,7 +1,8 @@
 .property-card {
   display: flex;
+  background-color: rgb(126, 191, 248);
   flex-direction: column;
-  
+  color:red;
   justify-content: center;
   height: 150px;
   padding: 10px;
@@ -16,8 +17,8 @@
   padding: 1px;
 }
 .property-card_email {
-  color: aliceblue;
-  background-color: rgb(151, 3, 3);
+  color: white;
+  background-color: red;
   width: 100%;
   font-size: medium;
 }

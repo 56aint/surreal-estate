@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Home from "./Home";
-import "../styles/PropertyCard.css";
+// import "../styles/PropertyCard.css";
 
 function App() {
   const [userID, setUserID] = useState("");

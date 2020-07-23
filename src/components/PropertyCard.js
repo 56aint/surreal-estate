@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { FaSave, FaArchive } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBath,
-  faBed,
-  faEnvelope,
-  faStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../styles/PropertyCard.css";
 
 const PropertyCard = ({
+  _id,
   title,
   type,
   bathrooms,
@@ -68,8 +64,14 @@ const PropertyCard = ({
         </span>
       </div>
       {userID && (
-        <button className="save-button" href="#">
-          <FontAwesomeIcon icon={faStar} /> Save
+        <button
+          className="save-button"
+          type="button"
+          onClick={onSaveProperty(_id)}
+        >
+          <FaArchive classname="save-sign" />
+          Save
+          <FaSave className="save-sign" />
         </button>
       )}
     </div>
@@ -86,6 +88,7 @@ PropertyCard.propTypes = {
   email: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
   onSaveProperty: PropTypes.func.isRequired,
+  _id: PropTypes.string.isRequired,
 };
 
 export default PropertyCard;

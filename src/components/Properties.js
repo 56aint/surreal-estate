@@ -36,16 +36,29 @@ const Properties = ({ userID }) => {
       });
   }, [search]);
 
+  const handleSaveProperty = (propertyId) => {
+    axios.post(`http://localhost:4000/api/v1//Favourite`, {
+      propertyListing: propertyId,
+      fbUserId: userID,
+    });
+  };
+
   return (
     <>
       <div className="properties">
         <SideBar />
 
-        {properties.map((property) => (
-          <PropertyCard key={property._id} {...property} userID={userID} />
-        ))}
-        <Alert message={alert.message} success={alert.isSuccess} />
-
+        <div property-card>
+          {properties.map((property) => (
+            <PropertyCard
+              key={property._id}
+              {...property}
+              userID={userID}
+              onSaveProperty={handleSaveProperty}
+            />
+          ))}
+          <Alert message={alert.message} success={alert.isSuccess} />
+        </div>
       </div>
     </>
   );

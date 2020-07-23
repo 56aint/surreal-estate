@@ -1,7 +1,7 @@
 .property-card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  
   justify-content: center;
   height: 150px;
   padding: 10px;
@@ -24,3 +24,23 @@
 .property-card_title {
   font-weight: bold;
 }
+.save-button {
+  width: 85px;
+  align-self: left;
+  
+  margin-right: 10em ;
+  
+  font-weight: bolder;
+  text-align: center;
+  background-color: rgb(20, 19, 19);  
+  border-radius: 5px;
+  color: white;
+  padding: .1em;
+  text-decoration: none;
+}
+.save-button:focus,
+.save-button:hover {
+  background-color: rgb(136, 2, 2);
+  color: White;
+}
+

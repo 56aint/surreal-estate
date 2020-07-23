@@ -457,7 +457,9 @@ To:
   )}
 />
 ```
-This is so that we can pass a prop to a component being rendered by React Router, so instead of using ```Routes component prop```, **we use**, ```render prop```. 
+Here we are passing our ```userID state``` to be rendered via ```<Properties /> component route```
+
+This is possible because with react ```<Router />```, you can pass a prop to a component being rendered by React Router, so instead of using ```Routes component prop```, **we use**, ```render prop```. 
 The ```render prop``` takes a function which gets passed the *React Router props* as an argument, and returns a ```rendered component```. Here we render the ```<Properties /> component```, pass in the default React Router props (i.e. history, location etc.) and a ```userID prop``` set to our ***```userID state```***.
 
 With render, you’re in charge of creating the element and can pass the component any props you’d like.

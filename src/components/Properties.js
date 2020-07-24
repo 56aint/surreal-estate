@@ -37,10 +37,25 @@ const Properties = ({ userID }) => {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    axios.post(`http://localhost:4000/api/v1//Favourite`, {
-      propertyListing: propertyId,
-      fbUserId: userID,
-    });
+    axios
+      .post(`http://localhost:4000/api/v1/Favourite`, {
+        propertyListing: propertyId,
+        fbUserId: userID,
+      })
+      .then((response) => {
+        console.log(response);
+        setAlert({
+          message: "Your Favourite Property has been saved",
+          isSuccess: true,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        setAlert({
+          message: "Server error, please try saving your Favourite again",
+          isSuccess: false,
+        });
+      });
   };
 
   return (
@@ -48,7 +63,7 @@ const Properties = ({ userID }) => {
       <div className="properties">
         <SideBar />
 
-        <div property-card>
+        <div>
           {properties.map((property) => (
             <PropertyCard
               key={property._id}

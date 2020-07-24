@@ -65,11 +65,12 @@ const PropertyCard = ({
       </div>
       {userID && (
         <button
+          href="#"
           className="save-button"
-          type="button"
-          onClick={onSaveProperty(_id)}
+          type="submit"
+          onClick={() => onSaveProperty(_id)}
         >
-          <FaArchive classname="save-sign" />
+          <FaArchive className="save-sign" />
           Save
           <FaSave className="save-sign" />
         </button>

@@ -25,7 +25,7 @@ const NavBar = ({ onLogin, onLogout, userID }) => {
         <li className="navbar-links-item">
           <Link to="/add-property">Add Property</Link>
         </li>
-        <div form-tooltip>
+        <div className="form-tooltip">
           <form className="fb-sign-in-form">
             {userID ? (
               <button type="submit" onClick={onLogout}>

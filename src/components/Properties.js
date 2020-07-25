@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
+
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import SideBar from "./SideBar";
@@ -13,24 +14,48 @@ const Properties = ({ userID }) => {
       message: "",
       isSuccess: false,
     },
+    loading: false,
   };
 
   const [properties, setProperties] = useState(initialState.properties);
 
   const [alert, setAlert] = useState(initialState.alert);
 
-  const { search } = useLocation();
+  const [loading, setLoading] = useState(initialState.loading);
+
+
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(`http://localhost:4000/api/v1/PropertyListing`)
+      .then(setLoading(true))
       .then(({ data }) => {
         setProperties(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
         setAlert({
           message:
-            "Something is broken, please refresh the browser and try again later.",
+            "Error loading properties, please refresh the browser and try again",
+        });
+        setLoading(true);
+      });
+  }, []);
+
+  const { search } = useLocation();
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .then(({ data }) => {
+        setProperties(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setAlert({
+          message:
+            "Something is broken, please refresh the browser and try again.",
           isSuccess: false,
         });
       });
@@ -49,6 +74,16 @@ const Properties = ({ userID }) => {
           isSuccess: true,
         });
       })
+      .then(() => {
+        setTimeout(
+          () =>
+            setAlert({
+              message: "saving...",
+              isSuccess: false,
+            }),
+          3000
+        );
+      })
       .catch((error) => {
         console.log(error);
         setAlert({
@@ -60,8 +95,14 @@ const Properties = ({ userID }) => {
 
   return (
     <>
+      <SideBar />
       <div className="properties">
-        <SideBar />
+        {loading && (
+          <div className="loading">
+            <div className="spinner1" />
+            <div className="spinner2" />
+          </div>
+        )}
 
         <div>
           {properties.map((property) => (

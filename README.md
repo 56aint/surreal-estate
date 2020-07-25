@@ -318,7 +318,14 @@ npm i --save @fortawesome/react-fontawesome
 *import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";*
 *import "../styles/PropertyCard.css";*
 
-Now to the ```<Properties />``` component. We are going to do something similar to what we did with ```<AddProperties />```, using Axios, alert, but this time we will be making our Axios GET request inside ```useEffect() hook```  
+Now to the ```<Properties />``` component. We are going to do something similar to what we did with ```<AddProperties />```, using Axios, alert, but this time we will be making our Axios GET request inside ```useEffect() hook```
+
+We use ```useEffect() hook``` when we are expecting something else to happen after the rendering of a component. In this usecase, we are using ```useEffect()``` to make an ```https call``` (as the 1st parameter of useEffect), and once that is rendered, the second parameter would be triggered
+```useEffect(() => {
+  1st param
+  }, [2nd param])
+  ```
+***NOTE*** useEffect() can be customised with ```if statement```. This will be used to ```setLoading``` for our page later.
 
 And we are going to map over the ```properties``` state, and pass each *key/value pair* from each *property listing* to the ```<PropertyCard />``` component as props and and render it inside our ```<Properties />``` return fragment. 
 ```

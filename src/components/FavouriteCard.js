@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa";
 import "../styles/PropertyCard.css";
 
-const PropertyCard = ({
-  _id,
-  title,
-  onDeleteFavourite,
-}) => {
+const FavouriteCard = ({ _id, title, onDeleteFavourite }) => {
   return (
     <div className="favourite-card">
       <div className="favourite-card_title">{title}</div>
@@ -24,10 +20,10 @@ const PropertyCard = ({
   );
 };
 
-PropertyCard.propTypes = {
+FavouriteCard.propTypes = {
   title: PropTypes.string.isRequired,
   onDeleteFavourite: PropTypes.func.isRequired,
   _id: PropTypes.string.isRequired,
 };
 
-export default PropertyCard;
+export default FavouriteCard;

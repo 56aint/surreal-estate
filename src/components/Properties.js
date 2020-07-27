@@ -76,8 +76,7 @@ const Properties = ({ userID }) => {
           1000
         );
       })
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         setTimeout(
           () =>
             setAlert({

@@ -1,4 +1,4 @@
-.property-card {
+.property-card, .favourite-card{
   display: flex;
   background-color: rgb(126, 191, 248);
   flex-direction: column;
@@ -22,10 +22,10 @@
   width: 100%;
   font-size: medium;
 }
-.property-card_title {
+.property-card_title, .favourite-card_title {
   font-weight: bold;
 }
-.save-button {
+.save-button, .delete-button {
   width: 85px;
   align-self: left;
   
@@ -44,4 +44,8 @@
   background-color: rgb(136, 2, 2);
   color: White;
 }
-
+.delete-button:focus,
+.delete-button:hover {
+  background-color: rgb(136, 2, 2);
+  color: White;
+}

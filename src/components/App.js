@@ -6,6 +6,7 @@ import Properties from "./Properties";
 import AddProperty from "./AddProperty";
 import Home from "./Home";
 // import "../styles/PropertyCard.css";
+import Favourites from "./Favourites";
 
 function App() {
   const [userID, setUserID] = useState("");
@@ -30,6 +31,12 @@ function App() {
           render={(props) => <Properties {...props} userID={userID} />}
         />
         <Route exact path="/add-property" component={AddProperty} />
+
+        <Route
+          exact
+          path="/favourites"
+          render={(props) => <Favourites {...props} userID={userID} />}
+        />
       </Switch>
     </div>
   );

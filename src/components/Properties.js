@@ -23,7 +23,6 @@ const Properties = ({ userID }) => {
 
   const [loading, setLoading] = useState(initialState.loading);
 
-
   useEffect(() => {
     axios
       .get(`http://localhost:4000/api/v1/PropertyListing`)
@@ -67,21 +66,25 @@ const Properties = ({ userID }) => {
         propertyListing: propertyId,
         fbUserId: userID,
       })
-      .then((response) => {
-        console.log(response);
-        setAlert({
-          message: "Your Favourite Property has been saved",
-          isSuccess: true,
-        });
-      })
       .then(() => {
         setTimeout(
           () =>
             setAlert({
               message: "saving...",
-              isSuccess: false,
+              isSuccess: true,
             }),
-          3000
+          1000
+        );
+      })
+      .then((response) => {
+        console.log(response);
+        setTimeout(
+          () =>
+            setAlert({
+              message: "Your Favourite Property has been saved",
+              isSuccess: true,
+            }),
+          2000
         );
       })
       .catch((error) => {

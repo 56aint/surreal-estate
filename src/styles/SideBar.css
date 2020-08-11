@@ -91,7 +91,7 @@ p{
   height: 2px;
   margin-bottom: 6px;
   position: relative;
-  background: #cdcdcd;
+  background: #90da06;
   border-radius: 3px;
   z-index: 1;
   -webkit-transform-origin: 4px 0px;
@@ -118,7 +118,7 @@ p{
  * Change the color of the hamburger when toggled
  */
 .sidebarToggle input:checked + label div {
-  background: #232323;
+  background: #a71313;
 }
 
 /*

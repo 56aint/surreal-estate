@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FaSave, FaArchive } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBath, faBed, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import "../styles/PropertyCard.css";
+// import "../styles/PropertyCard.css";
 
 const PropertyCard = ({
   _id,

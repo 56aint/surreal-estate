@@ -33,31 +33,12 @@ const Favourites = ({ userID }) => {
       .catch((error) => {
         console.log(error);
         setAlert({
-          message:
-            "Error loading favourites, please refresh the browser and try again",
+          message: "Server Error loading favourites, please try again",
         });
         setLoading(true);
+        setTimeout(() => setLoading(false), 3000);
       });
-  }, [userID]);
-
-  /* const { search } = useLocation();
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
-      .then(({ data }) => {
-        setProperties(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setAlert({
-          message:
-            "Something is broken, please refresh the browser and try again.",
-          isSuccess: false,
-        });
-      });
-  }, [search]); */
+  }, [userID, favourites]);
 
   const handleDeleteFavourite = (favouriteId) => {
     axios
@@ -66,7 +47,7 @@ const Favourites = ({ userID }) => {
         console.log(response);
         setAlert({
           message:
-            "Your Favourite Property has been deleted, you can add it again from 'View property Link'",
+            "Favourite Property deleted, go to 'View Property' Link to add more.",
           isSuccess: true,
         });
       })

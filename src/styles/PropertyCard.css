@@ -1,15 +1,21 @@
-.property-card, .favourite-card{
-  display: flex;
-  background-color: rgb(126, 191, 248);
-  flex-direction: column;
-  color:red;
-  justify-content: center;
-  height: 150px;
-  padding: 10px;
-  margin: auto;
-  font-family: "Open Sans"; 
-  border: 3px solid #141313;
-  width: 50%;
+.properties {
+  margin-left: 10em;
+  margin-right: auto;
+}
+.property-card {
+  background-color: rgba(117, 75, 77, 0.384);
+  float: left;
+  border: 1px solid #141313;
+  height: 180px;
+  color: rgb(229, 238, 229);
+  
+}
+.favourite-card{
+  background-color: rgba(117, 75, 77, 0.384);
+  float: left;
+  border: 1px solid #141313;
+  height: 80px;
+  color: rgb(229, 238, 229);
   
 }
 .property-card_price::before {
@@ -18,7 +24,6 @@
 }
 .property-card_email {
   color: white;
-  background-color: red;
   width: 100%;
   font-size: medium;
 }
@@ -29,14 +34,15 @@
   width: 85px;
   align-self: left;
   
-  margin-right: 10em ;
+  margin-right: 10em;
+  margin-top: 1em;
   
   font-weight: bolder;
   text-align: center;
   background-color: rgb(20, 19, 19);  
   border-radius: 5px;
   color: white;
-  padding: .1em;
+  padding: .5em;
   text-decoration: none;
 }
 .save-button:focus,

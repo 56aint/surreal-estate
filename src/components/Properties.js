@@ -7,6 +7,8 @@ import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import SideBar from "./SideBar";
 
+import "../styles/PropertyCard.css";
+
 const Properties = ({ userID }) => {
   const initialState = {
     properties: [],
@@ -73,14 +75,14 @@ const Properties = ({ userID }) => {
               message: "saving...",
               isSuccess: true,
             }),
-          1000
+          0
         );
       })
       .then(() => {
         setTimeout(
           () =>
             setAlert({
-              message: "Your Favourite Property has been saved",
+              message: "Your Favourite Property has been saved!",
               isSuccess: true,
             }),
           2000
@@ -105,8 +107,9 @@ const Properties = ({ userID }) => {
             <div className="spinner2" />
           </div>
         )}
+        <Alert message={alert.message} success={alert.isSuccess} />
 
-        <div>
+        <div className="property-card">
           {properties.map((property) => (
             <PropertyCard
               key={property._id}
@@ -115,7 +118,6 @@ const Properties = ({ userID }) => {
               onSaveProperty={handleSaveProperty}
             />
           ))}
-          <Alert message={alert.message} success={alert.isSuccess} />
         </div>
       </div>
     </>

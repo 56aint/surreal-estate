@@ -3,14 +3,11 @@ import PropTypes from "prop-types";
 import { FaTrash } from "react-icons/fa";
 import "../styles/PropertyCard.css";
 
-const PropertyCard = ({
-  _id,
-  title,
-  onDeleteFavourite,
-}) => {
+const FavouriteCard = ({ _id, title, city, onDeleteFavourite }) => {
   return (
     <div className="favourite-card">
       <div className="favourite-card_title">{title}</div>
+      <div className="favourite-card_city">{city}</div>
       <button
         href="#"
         className="delete-button"
@@ -18,16 +15,17 @@ const PropertyCard = ({
         onClick={() => onDeleteFavourite(_id)}
       >
         <FaTrash className="delete-sign" />
-        Delete
+        Remove
       </button>
     </div>
   );
 };
 
-PropertyCard.propTypes = {
+FavouriteCard.propTypes = {
   title: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
   onDeleteFavourite: PropTypes.func.isRequired,
   _id: PropTypes.string.isRequired,
 };
 
-export default PropertyCard;
+export default FavouriteCard;

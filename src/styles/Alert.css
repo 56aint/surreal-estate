@@ -2,15 +2,18 @@
 
 }
 .alert-success {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   color: green;
   text-align: center;
+  font-weight: bold;
 }
 
 .alert-error {
   font-size: 1rem;
   text-align: center;
-   font-weight: bold;
+  font-weight: bold;
   -webkit-animation: glow 2s ease-in-out infinite alternate;
   -moz-animation: glow 2s ease-in-out infinite alternate;
   animation: glow 2s ease-in-out infinite alternate;

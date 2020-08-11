@@ -466,17 +466,50 @@ To:
 ```
 Here we are passing our ```userID state``` to be rendered via ```<Properties /> component route```
 
-This is possible because with react ```<Router />```, you can pass a prop to a component being rendered by React Router, so instead of using ```Routes component prop```, **we use**, ```render prop```. 
+This is possible because with react ```<Router />```, you can pass a prop to a component being rendered by React Router, so, to do this, instead of using ```Routes component prop```, **we use**, ```render prop```. 
 The ```render prop``` takes a function which gets passed the *React Router props* as an argument, and returns a ```rendered component```. Here we render the ```<Properties /> component```, pass in the default React Router props (i.e. history, location etc.) and a ```userID prop``` set to our ***```userID state```***.
 
 With render, you’re in charge of creating the element and can pass the component any props you’d like.
 ```render``` accepts a *functional component* and that function won’t get ***unnecessarily remounted*** like with component(*that results in the existing component unmounting and the new component mounting instead of just updating the existing component.*). That function will also receive all the same props that component would receive so you can pass those through to the rendered component.
 
+* In the ```<Properties />``` component, pass the   
+  userID prop down to the ```<PropertyCard />``` component as a prop.
+* Add a "Save" button to your ```<PropertyCard />```  
+  component. It should only show if userID is truthy.
+* In your ```<Properties />``` component, create a 
+  function on the class called handleSaveProperty(). It should have a parameter of propertyId.
+* Inside the handleSaveProperty() function, make 
+  a ```HTTP request``` to create a new Favourite
+* Pass the handleSaveProperty() function to ```<PropertyCard  >``` as a prop called onSaveProperty.
+* In the <PropertyCard /> component, call the onSaveProperty() 
+  method when the "Save" button is clicked, passing in the _id of the property as an argument.
+```<button
+          href="#"
+          className="save-button"
+          type="button"
+          onClick={() => onSaveProperty(_id)}
+        >
+   </button>
+```
+
+* Using *POSTMAN*, try out the "Save" button to make sure our  
+  POST request to ```<Favourite />``` is succesful.
+  ```localhost:4000/api/v1/Favourite?populate=propertyListing```
+
+## Favourite Component
+Lets create our ```<Favourites.js />``` & ```route``` it so that when we click on ```<Favourite /> Link``` will, we will be making a ```GET request``` to see our *Favourite Properties*
+* ```... .get(
+        `http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing  `
+      )...
+      ```
+* And a delete function, to remove from *Favourite Properties*:
+  ```const handleDeleteFavourite = (favouriteId) => {
+    axios
+      .delete(`http://localhost:4000/api/v1/Favourite/${favouriteId}`)
+  ```
 
 
-
-
-
+Finally, we need to create ```<FavouriteCard.js />``` on which our *Favourite Properties* will arive, with the *Remove* button.
 
 
 

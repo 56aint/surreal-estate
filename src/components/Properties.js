@@ -109,7 +109,7 @@ const Properties = ({ userID }) => {
         )}
         <Alert message={alert.message} success={alert.isSuccess} />
 
-        <div>
+        <div className="property-card">
           {properties.map((property) => (
             <div>
               <PropertyCard

@@ -78,8 +78,7 @@ const Properties = ({ userID }) => {
           0
         );
       })
-      .then((response) => {
-        console.log(response);
+      .then(() => {
         setTimeout(
           () =>
             setAlert({
@@ -110,7 +109,7 @@ const Properties = ({ userID }) => {
         )}
         <Alert message={alert.message} success={alert.isSuccess} />
 
-        <div>
+        <div className="property-card">
           {properties.map((property) => (
             <div>
               <PropertyCard

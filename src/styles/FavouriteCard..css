@@ -1,49 +1,45 @@
-* {
-  box-sizing: border-box;
+/*.properties {
+  margin-left: 10em;
+  margin-right: auto;
+  padding: 0.2rem;
 }
+.property-card {
+  /*display: inline-block;*/
+  
+  /*box-sizing: border-box;*/
+  /*width: 33%;
+  padding: 0.5rem;*/
 
-/* Float five columns side by side */
-.card-column {
+  /*float: left;*/
+
+  /*background-color: rgba(117, 75, 77, 0.384);
+  
+  border: 1px solid #141313;
+  height: 180px;
+  color: rgb(229, 238, 229);
+  
+  
+  
+}*/
+
+.properties {
   float: left;
-  width: 20%;
-  padding: 0 5px;
-  margin-bottom: 20px;
-  border: 2px solid rgb(77, 70, 68);
-  background-color: rgba(117, 75, 77, 0.384);
-  
-  
+  width: 25%;
+  padding: 0 10px;
 }
 
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-  margin: 0 -5px;
+.property-card {
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
 }
 
-/* Clear floats after the columns */
-.row:after {
+.property-card:after {
   content: "";
   display: table;
   clear: both;
-}
-
-
-/* Styling the property cards */
-.property-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  color: rgb(229, 238, 229);
-  background-color:rgba(117, 75, 77, 0.384);
-  line-height: 25px;
-}
-
-/* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 900px) {
-  .card-column {
-    width: 80%;
-    display: block;
-    margin-bottom: 20px;
-  }
 }
 
 .favourite-card{
@@ -55,7 +51,6 @@
   height: 90px;
   
 }
-
 .property-card_price::before {
   content: "\00a3";
   padding: 1px;
@@ -68,22 +63,23 @@
 }
 .property-card_title, .favourite-card_title {
   font-weight: bold;
-  overflow: hidden;
-  white-space: nowrap;
 }
-
 .save-button {
   width: 85px;
+  align-self: left;
+  
+  margin-right: 10em;
+  margin-top: -0.4em;
+  
+  
   font-weight: bolder;
   text-align: center;
-  background-color: rgb(56, 4, 4);  
+  background-color: rgb(20, 19, 19);  
   border-radius: 5px;
   color: white;
   padding: .5em;
+  text-decoration: none;
 }
-
-
-
 .delete-button {
   width: 85px;
   align-self: left;
@@ -112,4 +108,12 @@
 .delete-button:hover {
   background-color: rgb(136, 2, 2);
   color: White;
+}
+
+@media screen and (max-width: 600px) {
+  .property-card {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }

@@ -18,65 +18,56 @@ const PropertyCard = ({
   onSaveProperty,
 }) => {
   return (
-    <div className="property-card">
-      <div>
-        <span className="property-card_title" data-testid="p_title-id">
-          {title}
-        </span>
-      </div>
+    <div className="card-row">
+      <div className="card-column">
+        <div className="property-card">
+          <div className="property-card_title" data-testid="p_title-id">
+            {title}
+          </div>
 
-      <div>
-        <span className="property-card_type" data-testid="p_type-id">
-          {type}
-        </span>
-      </div>
+          <div className="property-card_type" data-testid="p_type-id">
+            {type}
+          </div>
 
-      <div>
-        <span className="property-card_bathrooms" data-testid="p_bathrooms-id">
-          <FontAwesomeIcon icon={faBed} />
-          {bathrooms}
-        </span>
-      </div>
+          <div className="property-card_bathrooms" data-testid="p_bathrooms-id">
+            <FontAwesomeIcon icon={faBed} />
+            {bathrooms}
+          </div>
 
-      <div>
-        <span className="property-card_bedrooms" data-testid="p_bedrooms-id">
-          <FontAwesomeIcon icon={faBath} />
-          {bedrooms}
-        </span>
-      </div>
+          <div className="property-card_bedrooms" data-testid="p_bedrooms-id">
+            <FontAwesomeIcon icon={faBath} />
+            {bedrooms}
+          </div>
 
-      <div>
-        <span className="property-card_price" data-testid="p_price-id">
-          {price}
-        </span>
-      </div>
+          <div className="property-card_price" data-testid="p_price-id">
+            {price}
+          </div>
 
-      <div>
-        <span className="property-card_city" data-testid="p_city-id">
-          {city}
-        </span>
-      </div>
+          <div className="property-card_city" data-testid="p_city-id">
+            {city}
+          </div>
 
-      <div>
-        <a href={`mailto:${email}`}>
-          <span className="property-card_email" data-testid="p_email-id">
-            <FontAwesomeIcon icon={faEnvelope} />
-            Email
-          </span>
-        </a>
+          <a href={`mailto:${email}`}>
+            <div className="property-card_email" data-testid="p_email-id">
+              <FontAwesomeIcon icon={faEnvelope} />
+              Email
+            </div>
+          </a>
+
+          {userID && (
+            <button
+              href="#"
+              className="save-button"
+              type="button"
+              onClick={() => onSaveProperty(_id)}
+            >
+              <FaArchive className="save-sign" />
+              Save
+              <FaSave className="save-sign" />
+            </button>
+          )}
+        </div>
       </div>
-      {userID && (
-        <button
-          href="#"
-          className="save-button"
-          type="button"
-          onClick={() => onSaveProperty(_id)}
-        >
-          <FaArchive className="save-sign" />
-          Save
-          <FaSave className="save-sign" />
-        </button>
-      )}
     </div>
   );
 };

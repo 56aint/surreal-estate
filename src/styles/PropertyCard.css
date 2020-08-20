@@ -1,43 +1,26 @@
 * {
   box-sizing: border-box;
 }
-
-/* Float five columns side by side */
 .card-column {
   float: left;
   width: 20%;
-  padding: 0 5px;
-  margin-bottom: 20px;
+  padding: 1px;
+  margin-bottom: 10px;
   border: 2px solid rgb(77, 70, 68);
   background-color: rgba(117, 75, 77, 0.384);
-  
-  
 }
-
-/* Remove extra left and right margins, due to padding in columns */
-.row {
-  margin: 0 -5px;
+.card-row {
+  margin-left: 100px;
+  margin-right: 10px;
 }
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-/* Styling the property cards */
 .property-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
+  padding: 10px;
   text-align: center;
-  color: rgb(229, 238, 229);
-  background-color:rgba(117, 75, 77, 0.384);
+  color: rgb(23, 151, 23);
+  background-color: rgba(117, 75, 77, 0.384);
   line-height: 25px;
 }
-
-/* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 900px) {
   .card-column {
     width: 80%;
@@ -45,17 +28,17 @@
     margin-bottom: 20px;
   }
 }
-
-.favourite-card{
-  background-color: rgba(77, 35, 37, 0.384);
+.favourite-card {
+  background-color: rgb(88, 129, 87);
   float: left;
-  border: 1px solid #141313;
+  border: 1px solid #493d3d;
   height: 80px;
-  color: rgb(229, 238, 229);
+  color: rgb(17, 136, 17);
   height: 90px;
-  
+  margin-left: 100px;
+  color: rgb(179, 4, 4);
+  align-content: center;
 }
-
 .property-card_price::before {
   content: "\00a3";
   padding: 1px;
@@ -64,9 +47,9 @@
   color: white;
   font-size: medium;
   background-color: rgba(88, 3, 7, 0.493);
-  
 }
-.property-card_title, .favourite-card_title {
+.property-card_title,
+.favourite-card_title {
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
@@ -76,30 +59,26 @@
   width: 85px;
   font-weight: bolder;
   text-align: center;
-  background-color: rgb(56, 4, 4);  
+  background-color: rgb(56, 4, 4);
   border-radius: 5px;
   color: white;
-  padding: .5em;
+  padding: 0.5em;
 }
-
-
-
 .delete-button {
   width: 85px;
   align-self: left;
-  
   margin-right: 10em;
   margin-top: 1em;
-  
   font-weight: bolder;
   text-align: center;
-  background-color: rgb(56, 4, 4);  
+  background-color: rgb(56, 4, 4);
   border-radius: 5px;
   color: white;
-  padding: .5em;
+  padding: 0.5em;
   text-decoration: none;
 }
-.save-button, .delete-button:active {
+.save-button,
+.delete-button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

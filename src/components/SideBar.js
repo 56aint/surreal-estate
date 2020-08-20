@@ -72,7 +72,8 @@ const SideBar = () => {
         </label>
 
         <ul className="sidebar">
-          <p className="sidebar-title">Filter by City</p>
+          <p className="sidebar-title">Filter by</p>
+          <p> City</p>
           <Link to={buildQueryString("query", { city: "Manchester" })}>
             <li>Manchester</li>
           </Link>

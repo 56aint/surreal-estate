@@ -69,6 +69,7 @@ const AddProperty = () => {
               name="title"
               value={fields.title}
               onChange={handleFieldChange}
+              required
             />
           </label>
 
@@ -78,6 +79,7 @@ const AddProperty = () => {
               name="city"
               value={fields.city}
               onChange={handleFieldChange}
+              required
             >
               <option value="">Choose a city</option>
               <option value="Manchester">Manchester</option>
@@ -93,6 +95,7 @@ const AddProperty = () => {
               name="type"
               value={fields.type}
               onChange={handleFieldChange}
+              required
             >
               <option value="">Choose a Property type</option>
               <option value="Flat">Flat</option>
@@ -113,6 +116,7 @@ const AddProperty = () => {
               name="bedrooms"
               value={fields.bedrooms}
               onChange={handleFieldChange}
+              required
             />
           </label>
 
@@ -125,6 +129,7 @@ const AddProperty = () => {
               name="bathrooms"
               value={fields.bathrooms}
               onChange={handleFieldChange}
+              required
             />
           </label>
 
@@ -139,6 +144,7 @@ const AddProperty = () => {
                 name="price"
                 value={fields.price}
                 onChange={handleFieldChange}
+                required
               />
             </span>
           </label>
@@ -153,6 +159,7 @@ const AddProperty = () => {
               name="email"
               value={fields.email}
               onChange={handleFieldChange}
+              required
             />
           </label>
           <button type="submit" className="add-property-button">

@@ -4,11 +4,10 @@ import Alert from "../../components/Alert";
 
 describe("Alert", () => {
   test("display an error message", () => {
-    // const component = render(<Alert message="Error!" />);
     const { getByText, asFragment } = render(<Alert message="Error!" />);
     const alert = asFragment();
-    // const alertMessageNode = component.getByText("Error");
     expect(getByText(/Error/).textContent).toBe("Error!");
+    expect(getByText("Error!")).toBeTruthy();
     expect(alert).toMatchSnapshot();
   });
   test("display a success message", () => {
@@ -17,11 +16,16 @@ describe("Alert", () => {
     );
     const alert = asFragment();
     expect(getByText(/Success/).textContent).toBe("Success!!!");
+    expect(getByText("Success!!!")).toBeTruthy();
+    expect(getByText("Success!!!")).toHaveClass("Alert alert-success");
     expect(alert).toMatchSnapshot();
   });
   test("does not render an error or a success message if message props is empty", () => {
-    const { asFragment } = render(<Alert message="" />);
+    const { queryByText, asFragment } = render(<Alert message="" />);
     const alert = asFragment();
+    const alertMessage = queryByText(/Success/);
+
     expect(alert).toMatchSnapshot();
+    expect(alertMessage).not.toBeInTheDocument();
   });
 });

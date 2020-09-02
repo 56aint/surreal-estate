@@ -8,6 +8,7 @@ exports[`AddProperty renders correctly 1`] = `
     <form>
       <label
         class="form-label"
+        data-testid="ap_title-id"
         for="title"
       >
         Title
@@ -22,6 +23,7 @@ exports[`AddProperty renders correctly 1`] = `
       </label>
       <label
         class="form-label"
+        data-testid="ap_city-id"
         for="city"
       >
         <select
@@ -58,6 +60,7 @@ exports[`AddProperty renders correctly 1`] = `
       </label>
       <label
         class="form-label"
+        data-testid="ap_type-id"
         for="type"
       >
         <select
@@ -109,6 +112,7 @@ exports[`AddProperty renders correctly 1`] = `
       </label>
       <label
         class="form-label"
+        data-testid="ap_bedrooms-id"
         for="bedrooms"
       >
         Bedrooms
@@ -123,6 +127,7 @@ exports[`AddProperty renders correctly 1`] = `
       </label>
       <label
         class="form-label"
+        data-testid="ap_bathrooms-id"
         for="bathrooms"
       >
         Bathrooms
@@ -137,6 +142,7 @@ exports[`AddProperty renders correctly 1`] = `
       </label>
       <label
         class="form-label"
+        data-testid="ap_price-id"
         for="price"
       >
         Price
@@ -157,6 +163,7 @@ exports[`AddProperty renders correctly 1`] = `
       <br />
       <label
         class="form-label"
+        data-testid="ap_email-id"
         for="email"
       >
         Email

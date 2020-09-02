@@ -60,7 +60,11 @@ const AddProperty = () => {
       <div className="add-property">
         <form onSubmit={handleAddProperty}>
           <Alert message={alert.message} success={alert.isSuccess} />
-          <label htmlFor="title" className="form-label">
+          <label
+            htmlFor="title"
+            className="form-label"
+            data-testid="ap_title-id"
+          >
             Title
             <input
               placeholder="Property Description"
@@ -73,7 +77,7 @@ const AddProperty = () => {
             />
           </label>
 
-          <label htmlFor="city" className="form-label">
+          <label htmlFor="city" className="form-label" data-testid="ap_city-id">
             <select
               id="city"
               name="city"
@@ -89,7 +93,7 @@ const AddProperty = () => {
             </select>
           </label>
 
-          <label htmlFor="type" className="form-label">
+          <label htmlFor="type" className="form-label" data-testid="ap_type-id">
             <select
               id="type"
               name="type"
@@ -107,7 +111,11 @@ const AddProperty = () => {
               <option value="Bungalow">Bungalow</option>
             </select>
           </label>
-          <label htmlFor="bedrooms" className="form-label">
+          <label
+            htmlFor="bedrooms"
+            className="form-label"
+            data-testid="ap_bedrooms-id"
+          >
             Bedrooms
             <input
               className="number-input"
@@ -120,7 +128,11 @@ const AddProperty = () => {
             />
           </label>
 
-          <label htmlFor="bathrooms" className="form-label">
+          <label
+            htmlFor="bathrooms"
+            className="form-label"
+            data-testid="ap_bathrooms-id"
+          >
             Bathrooms
             <input
               className="number-input"
@@ -133,7 +145,11 @@ const AddProperty = () => {
             />
           </label>
 
-          <label htmlFor="price" className="form-label">
+          <label
+            htmlFor="price"
+            className="form-label"
+            data-testid="ap_price-id"
+          >
             Price
             <span className="gbp">
               <input
@@ -149,7 +165,11 @@ const AddProperty = () => {
             </span>
           </label>
           <br />
-          <label htmlFor="email" className="form-label">
+          <label
+            htmlFor="email"
+            className="form-label"
+            data-testid="ap_email-id"
+          >
             Email
             <input
               className="email-input"

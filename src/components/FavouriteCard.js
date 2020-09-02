@@ -6,8 +6,12 @@ import "../styles/PropertyCard.css";
 const FavouriteCard = ({ _id, title, city, onDeleteFavourite }) => {
   return (
     <div className="favourite-card">
-      <div className="favourite-card_title">{title}</div>
-      <div className="favourite-card_city">{city}</div>
+      <div className="favourite-card_title" data-testid="fav_title-id">
+        {title}
+      </div>
+      <div className="favourite-card_city" data-testid="fav_city-id">
+        {city}
+      </div>
       <button
         href="#"
         className="delete-button"

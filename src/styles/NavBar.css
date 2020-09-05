@@ -56,6 +56,9 @@ img {
 .navbar .fb-sign-in-form button:hover {
   background: rgb(5, 36, 177);
 }
+.sign-out-button {
+  width: 120px;
+}
 
 .navbar .tooltiptext {
   visibility: hidden;

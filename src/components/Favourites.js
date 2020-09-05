@@ -8,6 +8,7 @@ const Favourites = ({ userID }) => {
   const initialState = {
     favourites: [],
     alert: {
+      loading: false,
       message: "",
       isSuccess: false,
     },

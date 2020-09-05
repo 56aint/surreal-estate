@@ -111,9 +111,8 @@ const Properties = ({ userID }) => {
 
         <div className="property-card">
           {properties.map((property) => (
-            <div>
+            <div key={property._id}>
               <PropertyCard
-                key={property._id}
                 {...property}
                 userID={userID}
                 onSaveProperty={handleSaveProperty}

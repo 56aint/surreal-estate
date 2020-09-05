@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import "../styles/NavBar.css";
 import { FaFacebookSquare, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 // import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import FacebookLogin from "react-facebook-login";
-
 import logo from "../images/logo.png";
+import ErrorBoundary from "./ErrorBoundary";
 
 const NavBar = ({ onLogin, onLogout, userID }) => {
   return (
@@ -28,14 +28,16 @@ const NavBar = ({ onLogin, onLogout, userID }) => {
         <li className="navbar-links-item">
           <Link to="/favourites">Favourites</Link>
         </li>
-        <div className="form-tooltip">
-          <form className="fb-sign-in-form">
-            {userID ? (
+        <form className="fb-sign-in-form">
+          {userID ? (
+            <ErrorBoundary>
               <button type="submit" onClick={onLogout}>
                 <FaSignOutAlt />
                 Sign Out
               </button>
-            ) : (
+            </ErrorBoundary>
+          ) : (
+            <ErrorBoundary>
               <FacebookLogin
                 appId="2769895153231866"
                 autoLoad
@@ -49,17 +51,17 @@ const NavBar = ({ onLogin, onLogout, userID }) => {
                   </button>
                 )}
               />
-            )}
-          </form>
-        </div>
+            </ErrorBoundary>
+          )}
+        </form>
       </ul>
     </div>
   );
 };
 
 NavBar.propTypes = {
-  onLogin: propTypes.func.isRequired,
-  onLogout: propTypes.func.isRequired,
-  userID: propTypes.func.isRequired,
+  onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  userID: PropTypes.string.isRequired,
 };
 export default NavBar;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="navbar"
+    >
+      <img
+        alt="estate-logo"
+        src="logo.png"
+      />
+      <ul
+        class="navbar-links"
+      >
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/properties"
+          >
+            View Property
+          </a>
+        </li>
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/add-property"
+          >
+            Add Property
+          </a>
+        </li>
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/favourites"
+          >
+            Favourites
+          </a>
+        </li>
+        <form
+          class="fb-sign-in-form"
+        >
+          <h1>
+            Something went wrong.
+          </h1>
+        </form>
+      </ul>
+    </div>
+    <div>
+      Home Page
+    </div>
+  </div>
+</DocumentFragment>
+`;

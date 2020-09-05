@@ -513,7 +513,7 @@ Finally, we need to create ```<FavouriteCard.js />``` on which our *Favourite Pr
 
 
 ## TESTING
-Just to briefly discus a few selected advance testing. Testing some components such as the ```<FacebookLogin /> being rendered under <NavBar /> component```, is not as straight forward. This is because we need to account for the error message in ```FacebookLogin```. In doing so, by using ```<ErrorBoundary />```, we are making sure the rendering of ***Error*** message is part of the snapshot collected by ```asFragment``` component.
+Just to briefly discus a few selected advance testing. Testing some components such as the ```<FacebookLogin /> being rendered under <NavBar /> component```, is not as straight forward. This is because we need to account for the error message in ```FacebookLogin```. In doing so, by using ```<ErrorBoundary />``` - wrapping it around ```<FacebookLogin />```, we are making sure the rendering of ***Error*** message is part of the snapshot collected by ```asFragment``` component snapshot.
 
 
 

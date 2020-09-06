@@ -1,0 +1,52 @@
+.footer {
+  position: fixed;
+  bottom: 0px
+}
+.footer-content {
+  padding-left: 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  padding-left: 20px;
+  
+}
+
+.item {
+  margin: 20px;
+  color: crimson;
+}
+
+
+.fa-hand-point-right {
+  animation: slide1 1s ease-in-out infinite;
+  margin-left: 9px;
+}
+
+.fa-thumbs-up {
+  transform-origin: 0% 50%;
+  animation: slide4 4s linear infinite;
+}
+
+@keyframes slide1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
+@keyframes slide4 {
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

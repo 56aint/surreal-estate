@@ -7,6 +7,7 @@ import AddProperty from "./AddProperty";
 import Home from "./Home";
 // import "../styles/PropertyCard.css";
 import Favourites from "./Favourites";
+import Footer from "./Footer";
 
 function App() {
   const [userID, setUserID] = useState("");
@@ -38,6 +39,7 @@ function App() {
           render={(props) => <Favourites {...props} userID={userID} />}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }

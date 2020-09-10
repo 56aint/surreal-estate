@@ -57,7 +57,7 @@ const AddProperty = () => {
 
   return (
     <>
-      <div className="add-property">
+      <div className="add-property" data-testid="Addproperty">
         <form onSubmit={handleAddProperty}>
           <Alert message={alert.message} success={alert.isSuccess} />
           <label

@@ -1,12 +1,10 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-// import { createMemoryHistory } from "history";
 import App from "../../components/App";
 
 describe("App", () => {
   test("renders correctly", () => {
-    // const history = createMemoryHistory();
     const { asFragment } = render(
       <MemoryRouter>
         <App />
@@ -14,9 +12,16 @@ describe("App", () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  xtest("renders correctly", () => {
-    const { getByText } = render(<App />);
-    const linkElement = getByText(/surreal estate/i);
+  test("renders correctly", () => {
+    const { getByText, getByTestId } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    const linkElement = getByText(/Aaron Hays/i);
     expect(linkElement).toBeInTheDocument();
+    fireEvent.click(getByText(/View Property/i));
+    expect(getByText("Price Descending")).toBeInTheDocument();
+    expect(getByTestId("sidebar-id")).toBeInTheDocument();
   });
 });

@@ -58,6 +58,7 @@ exports[`Sidebar renders correct props 1`] = `
       </label>
       <ul
         class="sidebar"
+        data-testid="sidebar-id"
       >
         <p
           class="sidebar-title"

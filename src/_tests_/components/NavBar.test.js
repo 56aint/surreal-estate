@@ -32,6 +32,5 @@ describe("NavBar", () => {
     expect(getByText("Favourites")).toBeTruthy();
     expect(queryByText("Favourite")).not.toBeInTheDocument();
     expect(getByRole("button")).toHaveClass("sign-out-button");
-    // expect(getByText("LOGIN WITH FACEBOOK")).toBeInTheDocument();
   });
 });

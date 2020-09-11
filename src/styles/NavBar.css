@@ -2,13 +2,15 @@
   background-color: white;
   margin-left: 160px;
   padding: 0 10px;
+  border-radius: 8px;
 }
 img {
   width: 20%;
   height: 10%;
   opacity: 1;
   padding: 0px;
-  margin-left: 10px;
+  margin-left: -9px;
+  border-radius: 8px;
 }
 .navbar a {
   color: white;
@@ -20,6 +22,7 @@ img {
   display: inline-block;
   width: 90%;
   text-align: center;
+  border-radius: 5px;
 }
 
 .navbar a:hover {

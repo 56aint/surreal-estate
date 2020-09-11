@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 import "../styles/NavBar.css";
 import { FaSignOutAlt } from "react-icons/fa";
 import FacebookLogin from "react-facebook-login";
-import logo from "../images/logo.png";
+import logo2 from "../images/logo2.jpg";
 import ErrorBoundary from "./ErrorBoundary";
 
 const NavBar = ({ onLogin, onLogout, userID }) => {
   return (
     <div className="navbar" data-testid="navbar-id">
-      <img src={logo} alt="estate-logo" />
+      <img
+        src={logo2}
+        alt="http://www.freepik.com Designed by Starline / Freepik/>"
+      />
 
       <ul className="navbar-links" data-testid="navbar-links-id">
         <li className="navbar-links-item" data-testid="navbar-links-item-id">

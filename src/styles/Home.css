@@ -1,0 +1,43 @@
+body{
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.middle p {
+  color: rgb(0, 255, 200);
+}
+
+@media all and (max-width: 480px) {
+  .middle {
+     flex-basis: 100%;
+     font-size: 10px;
+     position: absolute;
+     top: 60%;
+  }
+
+}

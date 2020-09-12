@@ -10,8 +10,8 @@ exports[`App renders correctly 1`] = `
       data-testid="navbar-id"
     >
       <img
-        alt="estate-logo"
-        src="logo.png"
+        alt="http://www.freepik.com Designed by Starline / Freepik/>"
+        src="logo2.jpg"
       />
       <ul
         class="navbar-links"
@@ -67,8 +67,33 @@ exports[`App renders correctly 1`] = `
         </form>
       </ul>
     </div>
-    <div>
-      Home Page
+    <div
+      class="bgimg"
+    >
+      <div
+        class="topleft"
+      >
+        <p>
+          Watch This Space
+        </p>
+      </div>
+      <div
+        class="middle"
+      >
+        <h1>
+          Hi, welcome to our Housing Web-App. You can add your Properties, View Available Properties. Sign in with Facebook to Save & View your Favourite Properties.
+        </h1>
+        <p>
+          ....serving you to lead the house listings.
+        </p>
+      </div>
+      <div
+        class="bottomleft"
+      >
+        <p>
+          Keep Keeping on.
+        </p>
+      </div>
     </div>
     <footer
       class="footer"

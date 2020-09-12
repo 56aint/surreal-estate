@@ -7,8 +7,8 @@ exports[`NavBar renders correctly against snapshot 1`] = `
     data-testid="navbar-id"
   >
     <img
-      alt="estate-logo"
-      src="logo.png"
+      alt="http://www.freepik.com Designed by Starline / Freepik/>"
+      src="logo2.jpg"
     />
     <ul
       class="navbar-links"

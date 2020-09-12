@@ -34,7 +34,8 @@ const Favourites = ({ userID }) => {
       .catch((error) => {
         console.log(error);
         setAlert({
-          message: "Server Error loading favourites, please try again",
+          message:
+            "Server Error loading Favourites.Please Sign in with Facebook & try again",
         });
         setLoading(true);
         setTimeout(() => setLoading(false), 3000);

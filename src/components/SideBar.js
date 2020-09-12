@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import styled from "styled-components";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import qs from "qs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

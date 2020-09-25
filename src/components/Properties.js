@@ -38,6 +38,7 @@ const Properties = ({ userID }) => {
         setAlert({
           message:
             "Error loading properties, please refresh the browser and try again",
+          isSuccess: false,
         });
         setLoading(true);
       });
@@ -47,7 +48,9 @@ const Properties = ({ userID }) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .get(
+        `https://api-surreal-estate.herokuapp.com/api/v1/PropertyListing${search}`
+      )
       .then(({ data }) => {
         setProperties(data);
         setLoading(false);
@@ -64,7 +67,7 @@ const Properties = ({ userID }) => {
 
   const handleSaveProperty = (propertyId) => {
     axios
-      .post(`http://localhost:4000/api/v1/Favourite`, {
+      .post(`https://api-surreal-estate.herokuapp.com/api/v1/Favourite`, {
         propertyListing: propertyId,
         fbUserId: userID,
       })

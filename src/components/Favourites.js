@@ -44,7 +44,9 @@ const Favourites = ({ userID }) => {
 
   const handleDeleteFavourite = (favouriteId) => {
     axios
-      .delete(`http://localhost:4000/api/v1/Favourite/${favouriteId}`)
+      .delete(
+        `https://api-surreal-estate.herokuapp.com/api/v1/Favourite/${favouriteId}`
+      )
       .then((response) => {
         console.log(response);
         setAlert({

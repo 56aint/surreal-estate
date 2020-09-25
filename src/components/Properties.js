@@ -27,7 +27,7 @@ const Properties = ({ userID }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/PropertyListing`)
+      .get(`https://api-surreal-estate.herokuapp.com/api/v1/PropertyListing`)
       .then(setLoading(true))
       .then(({ data }) => {
         setProperties(data);

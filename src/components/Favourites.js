@@ -24,7 +24,7 @@ const Favourites = ({ userID }) => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing
+        `https://api-surreal-estate.herokuapp.com/api/v1/Favourite?query={"fbUserId":"${userID}"}&populate=propertyListing
       `
       )
       .then(({ data }) => {

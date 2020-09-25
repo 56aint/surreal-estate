@@ -29,7 +29,7 @@ const AddProperty = () => {
     // console.log(fields);
     setAlert({ message: "", isSuccess: false });
     axios
-      .post(`http://localhost:4000/api/v1/PropertyListing`, {
+      .post(`https://api-surreal-estate.herokuapp.com/api/v1/PropertyListing`, {
         ...fields,
       })
       .then((response) => {

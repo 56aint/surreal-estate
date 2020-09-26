@@ -1,9 +1,23 @@
-## Surreal Estate
+## TITLE 
+Surreal Estate
+
+## SCREENSHOTS
+Find below the app's mobile and desktop views
+
+![](https://https://github.com/56aint/surreal-estate/blob/master/surreal-estate/screenshots/desktop-view.png)
+![](https://https://github.com/56aint/surreal-estate/blob/master/surreal-estate/screenshots/mobile-view.png)
+![](https://https://github.com/56aint/surreal-estate/blob/master/surreal-estate/screenshots/mobile.view1-view.png)
+![](https://https://github.com/56aint/surreal-estate/blob/master/surreal-estate/screenshots/tablet-view-view.png)
+![](https://https://github.com/56aint/surreal-estate/blob/master/surreal-estate/screenshots/tablet1-view-view.png)
+
+
+## DESCRIPTION
  This is a react project to create a property search engine that will have multiple pages:
   * A listing page where you can search for different properties and sort/filter the results.
   * An add property page where you will add new properties
   * A property page
 Properties will come from an API that we have created
+
 ## Concept
  We are going to implement the project using the following concepts;
   * Single Page Application (SPA)
@@ -13,8 +27,8 @@ Properties will come from an API that we have created
   * API Interaction
   * OAut
 
-  ## Interracting with the project
-   To just interact with this app, please .....
+## Interracting with the project
+  To just interact with this app, please .....
 
 
   Or you can just code along with me:

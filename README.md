@@ -4,8 +4,10 @@ Surreal Estate
 ## SCREENSHOTS
 Find below the app's mobile and desktop views
 
+<img src="/56aint/surreal-estate/raw/master/screenshots/mobile-view.png" alt="" style="max-width:100%;">
+
 ![](https://github.com/56aint/surreal-estate/blob/master/screenshots/desktop-view.png)
-![](screenshots/mobile-view.png){:height="700px" width="400px"}
+![](screenshots/mobile-view.png)
 ![](https://github.com/56aint/surreal-estate/blob/master/screenshots/mobile-view-1.png)
 ![](https://github.com/56aint/surreal-estate/blob/master/screenshots/tablet-view.png)
 ![](https://github.com/56aint/surreal-estate/blob/master/screenshots/tablet-view-1.png)
